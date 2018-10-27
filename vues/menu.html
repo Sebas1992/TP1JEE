@@ -1,0 +1,188 @@
+<!Doctype html>
+<html>
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" crossorigin="anonymous">
+  <script src="jquery-3.3.1.min.js"></script>
+
+  <style>
+    .navbar{
+    	height: 80px;
+    }
+
+    .table{
+    	margin: 20px;
+    	border-style: solid;
+    	border-width: 3px;
+    }
+
+    .search{
+    	margin: 20px;
+    }
+
+    .select{
+    	margin: 20px;
+    }
+
+    .info{
+    	margin-top: 20px;
+    }
+
+    .jumbotron{
+      padding: 50px;
+    }
+
+    .jumbotron input{
+      float: right;
+    }
+
+    .selected{
+      color: green;
+    }
+  </style>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Stag&eacuteo</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Mon profil <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Compagnie</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Stages</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">&Eacutel&egraveves</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Documents</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Param&egravetres</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" placeholder="Search" type="text">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-4">
+      <div class="form-group select">
+        <select class="form-control" id="exampleSelect1">
+          <option>Stage programmeur Web</option>
+          <option>Stage programmeur C#</option>
+          <option>Stage programmeur java</option>
+          <option>Stage Gestionnaire r&eacuteseau</option>
+          <option>Stage Soutien technique</option>
+        </select>
+      </div>
+      <div class="input-group search">
+          <input class="form-control border-secondary py-2" type="search" value="Rechercher">
+          <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button">
+                  <i class="fa fa-search"></i>
+              </button>
+          </div>
+      </div>
+    <table class="table table-hover" id="table">
+    <thead>
+      <tr>
+        <th scope="col">Nom</th>
+        <th scope="col">Sp&eacutecialit&eacute</th>
+        <th scope="col">Candidat</th>
+        <th scope="col">Consult&eacute</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-primary clickable-row">
+        <td id="nom">Superstar 1</td>
+        <td id="specialite">R&eacuteseau</td>
+        <td><input type="checkbox" checked disabled /></td>
+        <td><input type="checkbox" disabled /></td>
+      </tr>
+      <tr class="table-secondary clickable-row">
+        <td id="nom">Superstar 2</a></td>
+        <td id="specialite">Gestion</td>
+        <td><input type="checkbox" disabled /></td>
+        <td><input type="checkbox" disabled /></td>
+      </tr>
+      <tr class="table-primary clickable-row">
+        <td id="nom">Superstar 3</a></td>
+        <td id="specialite">R&eacuteseau</td>
+        <td><input type="checkbox" disabled /></td>
+        <td><input type="checkbox"checked disabled /></td>
+      </tr>
+      <tr class="table-secondary clickable-row">
+        <td id="nom">Superstar 4</a></td>
+        <td id="specialite">Gestion</td>
+        <td><input type="checkbox" checked disabled/></td>
+        <td><input type="checkbox" disabled /></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+    <div class="col-8 info">
+      <div class="jumbotron">
+        <form action="" method="post">
+          <div class="row">
+            <div class="col-6">
+              <label for="Nom">Nom:</label>
+              <input type="text" name="nom" id="nom" value="MonNom" readonly>
+              <br />
+              <label for="Prenom">Pr&eacutenom:</label>
+              <input type="text" name="prenom" value="MonPrenom" readonly>
+              <br />
+              <label for="telephone">T&eacutel&eacutephone:</label>
+              <input type="text" name="telephone" value="MonTelephone" readonly>
+              <br />
+              <label for="courriel">Courriel:</label>
+              <input type="text" name="courriel" value="MonCourriel" readonly>
+              <br />
+            </div>
+            <div class="col-6">
+              <label for="specialite">Sp&eacutecialit&eacute:</label>
+              <input type="text" name="specialite" id="specialite" value="MaSpecialite" readonly>
+              <br />
+              <div class="form-group">
+                <label for="textArea">Ce que je recherche...</label>
+                <textarea class="form-control" id="exampleTextarea" rows="3" value="blablabla"></textarea>
+              </div>
+            </div>
+          </div>
+          <input type="submit button" class="btn btn-primary" value="Accepter candidature">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function(){
+    $(".clickable-row").click(function(){
+      $('.selected').removeClass('selected');
+      $(this).find("td").addClass("selected");
+
+      var nom = $(this).find("#nom").text();
+      var specialite = $(this).find("#specialite").text();
+
+      $(".jumbotron").find("#nom").val(nom);
+      $(".jumbotron").find("#specialite").val(specialite);
+    });
+  });
+</script>
+</body>
+</html>
