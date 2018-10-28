@@ -81,7 +81,7 @@
 </nav>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-4">
+    <div class="col-sm-12 col-md-4">
       <div class="form-group select">
         <select class="form-control" id="exampleSelect1">
           <option>Stage programmeur Web</option>
@@ -99,48 +99,50 @@
               </button>
           </div>
       </div>
-    <table class="table table-hover" id="table">
-    <thead>
-      <tr>
-        <th scope="col">Nom</th>
-        <th scope="col">Sp&eacutecialit&eacute</th>
-        <th scope="col">Candidat</th>
-        <th scope="col">Consult&eacute</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="table-primary clickable-row">
-        <td id="nom">Superstar 1</td>
-        <td id="specialite">R&eacuteseau</td>
-        <td><input type="checkbox" checked disabled /></td>
-        <td><input type="checkbox" disabled /></td>
-      </tr>
-      <tr class="table-secondary clickable-row">
-        <td id="nom">Superstar 2</a></td>
-        <td id="specialite">Gestion</td>
-        <td><input type="checkbox" disabled /></td>
-        <td><input type="checkbox" disabled /></td>
-      </tr>
-      <tr class="table-primary clickable-row">
-        <td id="nom">Superstar 3</a></td>
-        <td id="specialite">R&eacuteseau</td>
-        <td><input type="checkbox" disabled /></td>
-        <td><input type="checkbox"checked disabled /></td>
-      </tr>
-      <tr class="table-secondary clickable-row">
-        <td id="nom">Superstar 4</a></td>
-        <td id="specialite">Gestion</td>
-        <td><input type="checkbox" checked disabled/></td>
-        <td><input type="checkbox" disabled /></td>
-      </tr>
-    </tbody>
-  </table>
+    <div style="overflow-x:auto">
+	    <table class="table table-hover" id="table">
+	    <thead>
+	      <tr>
+	        <th scope="col">Nom</th>
+	        <th scope="col">Sp&eacutecialit&eacute</th>
+	        <th scope="col">Candidat</th>
+	        <th scope="col">Consult&eacute</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      <tr class="table-primary clickable-row">
+	        <td id="nom">Superstar 1</td>
+	        <td id="specialite">R&eacuteseau</td>
+	        <td><input type="checkbox" checked disabled /></td>
+	        <td><input type="checkbox" disabled /></td>
+	      </tr>
+	      <tr class="table-secondary clickable-row">
+	        <td id="nom">Superstar 2</a></td>
+	        <td id="specialite">Gestion</td>
+	        <td><input type="checkbox" disabled /></td>
+	        <td><input type="checkbox" disabled /></td>
+	      </tr>
+	      <tr class="table-primary clickable-row">
+	        <td id="nom">Superstar 3</a></td>
+	        <td id="specialite">R&eacuteseau</td>
+	        <td><input type="checkbox" disabled /></td>
+	        <td><input type="checkbox"checked disabled /></td>
+	      </tr>
+	      <tr class="table-secondary clickable-row">
+	        <td id="nom">Superstar 4</a></td>
+	        <td id="specialite">Gestion</td>
+	        <td><input type="checkbox" checked disabled/></td>
+	        <td><input type="checkbox" disabled /></td>
+	      </tr>
+	    </tbody>
+	  </table>
+	</div>
   </div>
-    <div class="col-8 info">
+    <div class="col-sm-12 col-md-8 info">
       <div class="jumbotron">
         <form action="" method="post">
           <div class="row">
-            <div class="col-6">
+            <div class="col-sm-12 col-md-6">
               <label for="Nom">Nom:</label>
               <input type="text" name="nom" id="nom" value="MonNom" readonly>
               <br />
@@ -154,7 +156,7 @@
               <input type="text" name="courriel" value="MonCourriel" readonly>
               <br />
             </div>
-            <div class="col-6">
+            <div class="col-sm-12 col-md-6">
               <label for="specialite">Sp&eacutecialit&eacute:</label>
               <input type="text" name="specialite" id="specialite" value="MaSpecialite" readonly>
               <br />
