@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+  p {
+      margin-left: 50%;
+  }
+
+  table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+  }
+  </style>
+
+ <meta charset="UTF-8">
+
+  <!-- Latest compiled and minified CSS -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+ <!-- jQuery library -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js%22%3E"></script>
+
+ <!-- Popper JS -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js%22%3E"></script>
+
+ <!-- Latest compiled JavaScript -->
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js%22%3E"></script>
+
+</head>
+
+<body>
+
+<!-- Menu de haut de page -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Stagéo</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Mon Profil <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Offres de stage</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Document</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Paramètres</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <h2>Profil</h2>
+  <div class="row">
+    <!-- Formulaire d'information prsonnel -->
+    <div class="col-sm-12 col-lg-6">
+      <div class="form-group row">
+        <label for="example-text-input" class="col-3 col-form-label">Nom</label>
+        <div class="col-6">
+          <input class="form-control" type="text" value="Nom" id="example-text-input">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="example-search-input" class="col-3 col-form-label">Prénom</label>
+        <div class="col-6">
+          <input class="form-control" type="search" value="Prénom" id="example-search-input">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="example-tel-input" class="col-3 col-form-label">Telephone</label>
+        <div class="col-6">
+          <input class="form-control" type="tel" value="1-(555)-555-5555" id="example-tel-input">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="example-email-input" class="col-3 col-form-label">Email</label>
+        <div class="col-6">
+          <input class="form-control" type="email" value="bootstrap@example.com" id="example-email-input">
+        </div>
+      </div>
+      <div class="form-group row">
+            <label for="exampleInputFile" class="col-3 col-form-label">CV</label>
+            <div class="col-6">
+              <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+            </div>
+      </div>
+      <div class="form-group row">
+            <label for="exampleInputFile" class="col-3 col-form-label">Relevé de notes</label>
+            <div class="col-6">
+              <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+            </div>
+      </div>
+      <div class="form-group row">
+        <label for="example-url-input" class="col-3 col-form-label">Linkedin</label>
+        <div class="col-6">
+          <input class="form-control" type="url" value="https://fr.linkedin.com/" id="example-url-input">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="example-url-input" class="col-3 col-form-label">Github</label>
+        <div class="col-6">
+          <input class="form-control" type="url" value="https://github.com/" id="example-url-input">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="example-search-input" class="col-3 col-form-label">Spécialité</label>
+        <div class="col-6">
+          <input class="form-control" type="search" value="Spécialité" id="example-search-input">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="example-search-input" class="col-3 col-form-label">Ce que je recherche</label>
+        <div class="col-6">
+          <input class="form-control" type="search" value="..." id="example-search-input">
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-6">
+          <button type="button" class="btn btn-primary">Enregistrer</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-lg-6">
+      <!-- information sur les consultation -->
+        <p>3 candidature envoyées</p>
+        <p>15 jours de recherche</p>
+        <p>CV lu: 10 fois</p>
+        <p>Consultation profil: 104 fois</p>
+      <!-- Tableau de compétance -->
+        <table class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Compétence</th>
+              <th scope="col">Domaine</th>
+              <th scope="col">Niveau</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Php</th>
+              <td>Backend</td>
+              <td>Intermédiare</td>
+            </tr>
+            <tr>
+              <th scope="row">CSS</th>
+              <td>FrontEnd</td>
+              <td>Bases</td>
+            </tr>
+            <tr>
+              <th scope="row">Git</th>
+              <td>Versionnage</td>
+              <td>Intermédiare</td>
+            </tr>
+            <tr>
+              <th scope="row">Ruby</th>
+              <td>Versionnage</td>
+              <td>Aucun</td>
+            </tr>
+            <tr class="">
+              <th scope="row">Serice à la clientèle</th>
+              <td>Autre</td>
+              <td>Expert</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  </div>
+
+  <!-- Tableau des offres de stage -->
+  <h2>Statue des demandes</h2>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Compagnie</th>
+        <th scope="col">Poste</th>
+        <th scope="col">Date de contact</th>
+        <th scope="col">Statue</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Dealer breacher</th>
+        <td>Programmeur Web</td>
+        <td>12/10/2018</td>
+        <td>En attente</td>
+      </tr>
+      <tr>
+        <th scope="row">Google</th>
+        <td>Soutien technique</td>
+        <td>12/10/2018</td>
+        <td>Reçu</td>
+      </tr>
+      <tr>
+        <th scope="row">Hydroquébec</th>
+        <td>programmation</td>
+        <td>12/10/2018</td>
+        <td>Reçu</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
