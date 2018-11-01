@@ -26,6 +26,7 @@ public abstract class AbstractAction implements Action{
     /**
      * @param request the request to set
      */
+    @Override
     public void setRequest(HttpServletRequest request) {
         this.request = request;
     }
@@ -40,6 +41,7 @@ public abstract class AbstractAction implements Action{
     /**
      * @param response the response to set
      */
+    @Override
     public void setResponse(HttpServletResponse response) {
         this.response = response;
     }
