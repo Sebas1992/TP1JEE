@@ -9,7 +9,10 @@ import com.GestionStage.Entites.Message;
 import com.GestionStage.Singleton.DbConnexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -43,8 +46,29 @@ public class MessageDAO implements Dao<Message>
     }
 
     @Override
-    public List<Message> findAll(Message x) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Message> findAll() {
+        List<Message> liste = new LinkedList<Message>();
+        String query = "Select * FROM message";
+        try{
+            Connection cnx = DbConnexion.getConnexion();
+            PreparedStatement stm = cnx.prepareStatement(query);
+            ResultSet rs = stm.executeQuery();
+            while(rs.next())
+            {
+                Message message = new Message();
+                message.setDate(rs.getDate("date"));
+                message.setHeure(rs.getTime("heure"));
+                message.setId_expediteur(rs.getString("id_expediteur"));
+                message.setId_message(rs.getString("message"));
+                message.setTitre(rs.getString("titre"));
+                message.setVu(rs.getInt("vu"));                
+                liste.add(message);
+            }
+        }catch(SQLException e){
+            Logger.getLogger(MessageDAO.class.getName()).log(Level.SEVERE, null, e);
+        }
+        DbConnexion.close();
+        return liste;
     }
 
     @Override

@@ -16,7 +16,7 @@ public interface Dao<T> {
     public boolean create(T x);
     public T find(int key);
     public T find(String key);
-    public List<T> findAll(T x);
+    public List<T> findAll();
     public boolean update(T x);
     public boolean delete(T x);
 }
