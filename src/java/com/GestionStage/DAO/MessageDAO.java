@@ -59,7 +59,8 @@ public class MessageDAO implements Dao<Message>
                 message.setDate(rs.getDate("date"));
                 message.setHeure(rs.getTime("heure"));
                 message.setId_expediteur(rs.getString("id_expediteur"));
-                message.setId_message(rs.getString("message"));
+                message.setId_message(rs.getString("id_message"));
+                message.setMessage("message");
                 message.setTitre(rs.getString("titre"));
                 message.setVu(rs.getInt("vu"));                
                 liste.add(message);
@@ -73,22 +74,70 @@ public class MessageDAO implements Dao<Message>
 
     @Override
     public boolean update(Message x) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int rowsAffected = 0;
+        String query = "UPDATE message SET date=?, heure=?, id_expediteur=?, "
+                + "titre=?, vu=? where id_message=?";
+        try{
+            Connection cnx = DbConnexion.getConnexion();
+            PreparedStatement stm = cnx.prepareStatement(query);
+            stm.setDate(1, x.getDate());
+            stm.setTime(2, x.getHeure());
+            stm.setString(3, x.getId_expediteur());
+            stm.setString(4, x.getTitre());
+            stm.setInt(5, x.getVu());
+            stm.setString(6, x.getId_message());
+            rowsAffected = stm.executeUpdate();
+        }catch(SQLException e){
+            Logger.getLogger(MessageDAO.class.getName()).log(Level.SEVERE, null, e);
+        }
+        DbConnexion.close();
+        return rowsAffected != 0;
     }
 
     @Override
     public boolean delete(Message x) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String query = "DELETE FROM message WHERE id_message=?";
+        int resultat = 0;
+        try{
+            Connection cnx = DbConnexion.getConnexion();
+            PreparedStatement stm = cnx.prepareStatement(query);
+            stm.setString(1, x.getId_message());
+            resultat = stm.executeUpdate();
+        }catch(SQLException e){
+            Logger.getLogger(MessageDAO.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return resultat != 0;
     }
 
     @Override
     public Message find(int key) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String keyStr = Integer.toString(key);
+        return this.find(keyStr);
     }
 
     @Override
     public Message find(String key) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Message message = new Message();
+        String query = "SELECT * FROM message WHERE id_message=?";
+        try{
+            Connection cnx = DbConnexion.getConnexion();
+            PreparedStatement stm = cnx.prepareStatement(query);            
+            stm.setString(1, key);
+            ResultSet rs = stm.executeQuery();
+            if(rs.next()){
+                message.setDate(rs.getDate("date"));
+                message.setHeure(rs.getTime("heure"));
+                message.setId_expediteur(rs.getString("id_expediteur"));
+                message.setId_message(rs.getString("id_message"));
+                message.setMessage(rs.getString("message"));
+                message.setTitre(rs.getString("titre"));
+                message.setVu(rs.getInt("vu"));
+                return message;               
+            }
+        }catch(SQLException e){
+            Logger.getLogger(MessageDAO.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return message;
     }
     
 }
