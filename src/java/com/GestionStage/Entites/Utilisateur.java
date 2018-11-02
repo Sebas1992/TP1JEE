@@ -13,109 +13,95 @@ import java.sql.Timestamp;
  * @author sebas
  */
 public class Utilisateur {
-    private String id_message;
-    private String titre;
-    private String message;
-    private int vu;
-    private Timestamp date;
-    private Time heure;
-    private String id_expediteur;
+    private String id_utilisateur;
+    private String courriel;
+    private String mot_de_passe;
+    private String nom;
+    private String prenom;
+    private String type_utilisateur;
 
     /**
-     * @return the id_message
+     * @return the id_utilisateur
      */
-    public String getId_message() {
-        return id_message;
+    public String getId_utilisateur() {
+        return id_utilisateur;
     }
 
     /**
-     * @param id_message the id_message to set
+     * @param id_utilisateur the id_utilisateur to set
      */
-    public void setId_message(String id_message) {
-        this.id_message = id_message;
+    public void setId_utilisateur(String id_utilisateur) {
+        this.id_utilisateur = id_utilisateur;
     }
 
     /**
-     * @return the titre
+     * @return the courriel
      */
-    public String getTitre() {
-        return titre;
+    public String getCourriel() {
+        return courriel;
     }
 
     /**
-     * @param titre the titre to set
+     * @param courriel the courriel to set
      */
-    public void setTitre(String titre) {
-        this.titre = titre;
+    public void setCourriel(String courriel) {
+        this.courriel = courriel;
     }
 
     /**
-     * @return the message
+     * @return the mot_de_passe
      */
-    public String getMessage() {
-        return message;
+    public String getMot_de_passe() {
+        return mot_de_passe;
     }
 
     /**
-     * @param message the message to set
+     * @param mot_de_passe the mot_de_passe to set
      */
-    public void setMessage(String message) {
-        this.message = message;
+    public void setMot_de_passe(String mot_de_passe) {
+        this.mot_de_passe = mot_de_passe;
     }
 
     /**
-     * @return the vu
+     * @return the nom
      */
-    public int getVu() {
-        return vu;
+    public String getNom() {
+        return nom;
     }
 
     /**
-     * @param vu the vu to set
+     * @param nom the nom to set
      */
-    public void setVu(int vu) {
-        this.vu = vu;
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
     /**
-     * @return the date
+     * @return the prenom
      */
-    public Timestamp getDate() {
-        return date;
+    public String getPrenom() {
+        return prenom;
     }
 
     /**
-     * @param date the date to set
+     * @param prenom the prenom to set
      */
-    public void setDate(Timestamp date) {
-        this.date = date;
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
     }
 
     /**
-     * @return the heure
+     * @return the type_utilisateur
      */
-    public Time getHeure() {
-        return heure;
+    public String getType_utilisateur() {
+        return type_utilisateur;
     }
 
     /**
-     * @param heure the heure to set
+     * @param type_utilisateur the type_utilisateur to set
      */
-    public void setHeure(Time heure) {
-        this.heure = heure;
+    public void setType_utilisateur(String type_utilisateur) {
+        this.type_utilisateur = type_utilisateur;
     }
-
-    /**
-     * @return the id_expediteur
-     */
-    public String getId_expediteur() {
-        return id_expediteur;
-    }
-
-    /**
-     * @param id_expediteur the id_expediteur to set
-     */
-    public void setId_expediteur(String id_expediteur) {
-        this.id_expediteur = id_expediteur;
-    }
+    
 }
