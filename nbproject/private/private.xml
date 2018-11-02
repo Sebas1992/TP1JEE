@@ -5,6 +5,7 @@
         <group>
             <file>file:/home/sebas/Dropbox/Hypermedias2/TP1/GestionDeStage/web/WEB-INF/web.xml</file>
             <file>file:/home/sebas/Dropbox/Hypermedias2/TP1/GestionDeStage/src/java/com/GestionStage/Singleton/DbConnexion.java</file>
+            <file>file:/home/sebas/Dropbox/Hypermedias2/TP1/GestionDeStage/src/java/com/GestionStage/Entites/Utilisateur.java</file>
         </group>
     </open-files>
 </project-private>
