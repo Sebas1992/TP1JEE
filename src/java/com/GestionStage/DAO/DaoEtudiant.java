@@ -5,10 +5,10 @@
  */
 package com.GestionStage.DAO;
 
+import com.GestionStage.Entites.Etudiant;
 import com.GestionStage.Singleton.DbConnexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,20 +18,33 @@ import java.util.logging.Logger;
  * @author Nicolas
  */
 public class DaoEtudiant {
-    public boolean create(Object obj){
+    public boolean create(Etudiant etu){
         Connection cnx = DbConnexion.getConnexion();
-        Object obj1 = obj;
         boolean res=false;
         try{
             PreparedStatement stm=cnx.prepareStatement("INSERT INTO etudiant VALUES (?,?) ");
-            stm.setString(1,"1111111");
-            stm.setString(2,"Trouvé");
+            stm.setString(1,etu.getId_etudiant());
+            stm.setString(2,etu.getStatus());          
             res = stm.execute();
+            stm.close();
         }catch(SQLException ex){
             Logger.getLogger(DaoEtudiant.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
         return res;    
     }
-    
+    public boolean update(Etudiant etu){
+        Connection cnx = DbConnexion.getConnexion();
+        boolean res=false;
+        try{
+            PreparedStatement stm=cnx.prepareStatement("UPDATE etudiant SET STATUS_RECHERCHE=? WHERE ID_ETUDIANT=? ");
+            stm.setString(1,etu.getStatus());
+            stm.setString(2,etu.getId_etudiant());
+            res = stm.execute();
+            stm.close();
+        }catch(SQLException ex){
+            Logger.getLogger(DaoEtudiant.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return res;
+    }
+    //ajouter delete
 }
