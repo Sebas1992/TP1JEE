@@ -19,6 +19,6 @@
     </context-param>
     <context-param>
         <param-name>urlBD</param-name>
-        <param-value>jdbc:mysql://localhost/gestionstage?user=root&amp;password=root&amp;serverTimezone=UTC</param-value>
+        <param-value>jdbc:mysql://localhost/stageo?user=root&amp;password=root&amp;serverTimezone=UTC</param-value>
     </context-param>
 </web-app>
