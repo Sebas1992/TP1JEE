@@ -15,10 +15,13 @@
     </session-config>
     <context-param>
         <param-name>piloteJDBC</param-name>
-        <param-value>com.mysql.jc.jdbc.Driver</param-value>
+        <param-value>com.mysql.cj.jdbc.Driver</param-value>
     </context-param>
     <context-param>
         <param-name>urlBD</param-name>
         <param-value>jdbc:mysql://localhost/stageo?user=root&amp;password=root&amp;serverTimezone=UTC</param-value>
     </context-param>
+    <listener>
+        <listener-class>com.GestionStage.EcouteurApplication.EcouteurApplication</listener-class>
+    </listener>
 </web-app>
