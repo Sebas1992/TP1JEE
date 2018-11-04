@@ -13,9 +13,9 @@ public class DbConnexion {
     
     private DbConnexion() {
     }
-    public static void loadDriver(String driverString){
+    public static void loadDriver(){
         try {
-            Class.forName(driverString);
+            Class.forName("com.mysql.jdbc.Driver");
         } catch (ClassNotFoundException ex) {
             System.out.println(ex.getMessage());
         }
@@ -39,19 +39,19 @@ public class DbConnexion {
     public static Connection getConnexion() {
         try {
             if (laConnexion == null || laConnexion.isClosed()) {
-                    System.out.println("Chaine du pilote : "+chainePilote);
-                    DbConnexion.loadDriver(chainePilote);
+                    DbConnexion.loadDriver();
                     //Ouvrir la connexion à la BD.
                     if ("".equals(user)){
-                        laConnexion = DriverManager.getConnection(urlBD);
-                        System.out.println("URL: " + DbConnexion.urlBD);
-                        System.out.println("chaine: " + DbConnexion.chainePilote);
+                        laConnexion = DriverManager.getConnection("jdbc:mysql://localhost/stageo?user=root&password=root&serverTimezone=UTC");
+
                     }else
                         laConnexion = DriverManager.getConnection(urlBD,user,password);
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
+            System.out.println("erreur get connection");
         }
+        System.out.println("Connexion:"+laConnexion);
         return laConnexion;
     }
     public static void close() {

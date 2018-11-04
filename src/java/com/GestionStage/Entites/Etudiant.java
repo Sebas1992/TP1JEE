@@ -13,8 +13,15 @@ public class Etudiant {
     
     private String id_etudiant;
     private String status;
-
+    
     public Etudiant() {
+    }
+
+    public Etudiant(String id_etudiant) {
+        //this.id_etudiant = id_etudiant;
+        //this.status="En recherche de stage";
+        this(id_etudiant,"En recherche de stage");
+
     }
     
     public Etudiant(String id_etudiant, String status) {
