@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.GestionStage.Controlleurs.ActionBuilder;
 import com.GestionStage.Controlleurs.Action;
 import com.GestionStage.Singleton.DbConnexion;
+import java.sql.Connection;
 
 /**
  *
@@ -29,7 +30,8 @@ public class ControleurFrontal extends HttpServlet {
     // Pour l'instant l'url pattern est / ( voir web.xml)
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        Connection cnx = DbConnexion.getConnexion();
+        System.out.println(cnx);
         response.setContentType("text/html;charset=UTF-8");
         Action action = ActionBuilder.getAction(request);
         action.setRequest(request);

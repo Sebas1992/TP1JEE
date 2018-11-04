@@ -15,7 +15,7 @@
     </session-config>
     <context-param>
         <param-name>piloteJDBC</param-name>
-        <param-value>com.mysql.jdbc.Driver</param-value>
+        <param-value>com.mysql.jc.jdbc.Driver</param-value>
     </context-param>
     <context-param>
         <param-name>urlBD</param-name>
