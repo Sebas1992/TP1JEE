@@ -17,6 +17,9 @@ public class ActionBuilder {
         }
         // Toutes nos actions devront être ajouté ici
         switch (actionAFaire) {
+            case("inscription"):
+                action = new InscriptionAction();
+                break;
             default :
                 action = new DefaultAction();
         }        

@@ -20,6 +20,18 @@ public class Utilisateur {
     private String prenom;
     private String type_utilisateur;
 
+    public Utilisateur() {
+    }
+    
+    public Utilisateur(String id_utilisateur, String courriel, String mot_de_passe, String nom, String prenom, String type_utilisateur) {
+        this.id_utilisateur = id_utilisateur;
+        this.courriel = courriel;
+        this.mot_de_passe = mot_de_passe;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.type_utilisateur = type_utilisateur;
+    }
+    
     /**
      * @return the id_utilisateur
      */
