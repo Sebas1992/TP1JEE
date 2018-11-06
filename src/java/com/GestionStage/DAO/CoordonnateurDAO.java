@@ -12,6 +12,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -88,7 +89,28 @@ public class CoordonnateurDAO implements Dao<Coordonnateur>{
 
     @Override
     public List<Coordonnateur> findAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Coordonnateur> liste = new LinkedList<>();
+        String query = "Select * FROM utilisateur where type_utilisateur='coordonnateur'";
+        try{
+            Connection cnx = DbConnexion.getConnexion();
+            PreparedStatement stm = cnx.prepareStatement(query);            
+            ResultSet rs = stm.executeQuery();
+            while(rs.next())
+            {
+                Coordonnateur coordonnateur = new Coordonnateur();
+                coordonnateur.setCourriel(rs.getString("courriel"));
+                coordonnateur.setId_coordonnateur(rs.getString("id_utilisateur"));
+                coordonnateur.setMot_de_passe(rs.getString("mot_de_passe"));
+                coordonnateur.setNom(rs.getString("nom"));
+                coordonnateur.setPrenom(rs.getString("prenom"));
+                coordonnateur.setType_utilisateur(rs.getString("type_utilisateur"));                
+                liste.add(coordonnateur);
+            }
+        }catch(SQLException e){
+            Logger.getLogger(UtilisateurDAO.class.getName()).log(Level.SEVERE, null, e);
+        }
+        DbConnexion.close();
+        return liste;
     }
 
     @Override

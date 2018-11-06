@@ -64,6 +64,41 @@
                 <c:out value="Impossible de trouver le Coordonnateur" />
             </c:otherwise>
         </c:choose>
+        
+        <h1>Rechercher tous les coordonnateurs</h1>
+        <form action="" method="get">
+            <label>Rechercher tous les coordonnateurs:</label>
+            <input type="hidden" name="action" value="coordonnateurConsulterCom" />
+            <input type="submit" value="rechercher" />
+        </form>
+        <c:choose>
+        <c:when test="${not empty requestScope.listeCoord}">
+            <table>
+                <thead>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Courriel</th>
+                </thead>
+                <tbody>
+                    <c:forEach items="${requestScope.listeCoord}" var="coord">
+                    <tr>
+                        <td><c:out value="${coord.id_coordonnateur}" /></td>
+                        <td><c:out value="${coord.nom}" /></td>
+                        <td><c:out value="${coord.prenom}" /></td>
+                        <td><c:out value="${coord.courriel}" /></td>
+                    </tr>
+                    </c:forEach>
+                </tbody>
+            </table>
+        </c:when>
+        <c:when test="${not empty sessionScope.erreurFA}">
+            <c:out value="${sessionScope.erreurFA}" />
+        </c:when>
+            <c:otherwise>
+                <c:out value="Erreur Fatale!" />
+            </c:otherwise> 
+        </c:choose>
     </body>
 </html>
 

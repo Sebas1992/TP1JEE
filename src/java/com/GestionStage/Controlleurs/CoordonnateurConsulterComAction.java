@@ -7,6 +7,8 @@ package com.GestionStage.Controlleurs;
 
 import com.GestionStage.DAO.CoordonnateurDAO;
 import com.GestionStage.Entites.Coordonnateur;
+import java.util.LinkedList;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -45,10 +47,21 @@ public class CoordonnateurConsulterComAction extends AbstractAction{
             request.setAttribute("message", "Coordonnateur pas creer");
         }
         
+        // Traitement pour tester la recherche par cle
         coord = coordDao.find(request.getParameter("id_etu"));
         if(coord != null){
             request.setAttribute("coordonnateur", coord);
         }
+        
+        // Traitement pour tester findAll()
+        List<Coordonnateur> listeCoord = new LinkedList();
+        listeCoord = coordDao.findAll();        
+        if(!listeCoord.isEmpty()){
+            request.setAttribute("listeCoord", listeCoord);
+        }else{
+            request.setAttribute("erreurFA", "Impossible de trouver la liste de coordonnateurs");
+        }
+             
         
         return "coordConsulterCom";
     }
