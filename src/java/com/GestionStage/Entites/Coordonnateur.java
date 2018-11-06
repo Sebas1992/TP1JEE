@@ -10,20 +10,20 @@ package com.GestionStage.Entites;
  * @author sebas
  */
 public class Coordonnateur extends Utilisateur{
-    private String id_coonrdonnateur;
+    private String id_coordonnateur;
 
     /**
      * @return the id_connrdonnateur
      */
-    public String getId_coonrdonnateur() {
-        return id_coonrdonnateur;
+    public String getId_coordonnateur() {
+        return id_coordonnateur;
     }
 
     /**
      * @param id_connrdonnateur the id_connrdonnateur to set
      */
-    public void setId_coonrdonnateur(String id_connrdonnateur) {
-        this.id_coonrdonnateur = id_connrdonnateur;
+    public void setId_coordonnateur(String id_coordonnateur) {
+        this.id_coordonnateur = id_coordonnateur;
     }
     
 }
