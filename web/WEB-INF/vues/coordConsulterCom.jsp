@@ -120,6 +120,18 @@
             
             <br><input type="submit" value="Update"/>
         </form>
+        
+        
+        <h1>Deleter coordonnateur</h1>
+        <form action="" methode="get">
+            <label>Cle:</label>
+            <input type="text" name="id_etu" id="id_etu" />
+            <input type="hidden" name="action" value="coordonnateurConsulterCom" />
+            <input type="submit" value="Supprimer" />
+        </form>
+        <c:if test="${not empty requestScope.deleteUpdate}">
+            <c:out value="${requestScope.deleteUpdate}" />
+        </c:if>
     </body>
 </html>
 

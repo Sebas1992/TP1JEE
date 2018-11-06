@@ -136,7 +136,26 @@ public class CoordonnateurDAO implements Dao<Coordonnateur>{
 
     @Override
     public boolean delete(Coordonnateur x) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String queryUtil = "DELETE FROM utilisateur WHERE id_utilisateur=?";
+        String queryCoord = "DELETE FROM coordonnateur WHERE id_coordonnateur=?";
+        int resultat = 0;
+        try{
+            Connection cnx = DbConnexion.getConnexion();
+            
+            // Traitement sur la table utilisateur
+            PreparedStatement stm = cnx.prepareStatement(queryUtil);
+            stm.setString(1, x.getId_coordonnateur());
+            resultat += stm.executeUpdate();
+            
+            // Traitement sur la table coordonnateur
+            stm = cnx.prepareStatement(queryCoord);
+            stm.setString(1, x.getId_coordonnateur());
+            resultat += stm.executeUpdate();
+            
+        }catch(SQLException e){
+            Logger.getLogger(UtilisateurDAO.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return resultat == 2;
     }
     
 }

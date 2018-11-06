@@ -75,6 +75,13 @@ public class CoordonnateurConsulterComAction extends AbstractAction{
             request.setAttribute("messageUpdate", "Echec de l'update");
         }
         
+        //Traitement pour tester DELETE
+        if(coordDao.delete(coord)){
+            request.setAttribute("deleteUpdate", "Succes du delete");
+        }else{
+            request.setAttribute("deleteUpdate", "Echec du delete");
+        }
+        
         return "coordConsulterCom";
     }
 }
