@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
  * @author sebas
  */
 public abstract class AbstractAction implements Action{
-    private HttpServletRequest request;
-    private HttpServletResponse response;
+    protected HttpServletRequest request;
+    protected HttpServletResponse response;
 
     /**
      * @return the request

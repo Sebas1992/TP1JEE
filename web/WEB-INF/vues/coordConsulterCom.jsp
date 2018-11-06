@@ -14,12 +14,9 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-        <% 
-            if(request.getParameter("message")!=null){
-        %>      <h2><% request.getParameter("message"); %>/h2><%
-            }
-        
-        %>
+        <c:if test="${not empty param.message}">
+            <c:out value="${param.message}" />
+        </c:if>
         <form action="" method="get" >
             <label>Id numero:</label>
             <input type="text" name="id_etu" id="id_etu"  /><br>
@@ -31,8 +28,8 @@
             <input type="text" name="nom" id="nom"  /><br>
             <label>Prenom:</label>
             <input type="text" name="prenom" id="prenom"  /><br>
-            <input type='hidden' name='role' value="etudiant" />
-            <input type="hidden" name="action" value="inscription">
+            <input type='hidden' name='role' value="coordonnateur" />
+            <input type="hidden" name="action" value="coordonnateurConsulterCom">
             
             <br><input type="submit" value="S'inscrire"/>
         </form>

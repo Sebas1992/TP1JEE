@@ -13,7 +13,7 @@ public class DefaultAction extends AbstractAction{
 
     @Override
     public String execute() {
-        return "index";
+        return "coordConsulterCom";
     }
     
 }

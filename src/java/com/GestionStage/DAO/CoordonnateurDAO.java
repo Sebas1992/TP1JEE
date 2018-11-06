@@ -33,7 +33,7 @@ public class CoordonnateurDAO implements Dao<Coordonnateur>{
             
             // Insertion des valeurs dans la table utilisateur
             PreparedStatement stm = cnx.prepareStatement(queryUtil);
-            stm.setString(1, x.getId_utilisateur());
+            stm.setString(1, x.getId_coordonnateur());
             stm.setString(2, x.getCourriel());
             stm.setString(3, x.getMot_de_passe());
             stm.setString(4, x.getNom());
