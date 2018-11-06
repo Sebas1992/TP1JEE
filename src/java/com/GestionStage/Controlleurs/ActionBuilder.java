@@ -20,6 +20,9 @@ public class ActionBuilder {
             case("inscription"):
                 action = new InscriptionAction();
                 break;
+            case("coordonnateurConsulterCom"):
+                action = new CoordonnateurConsulterComAction();
+                break;
             default :
                 action = new DefaultAction();
         }        
