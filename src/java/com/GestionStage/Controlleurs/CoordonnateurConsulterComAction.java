@@ -45,6 +45,11 @@ public class CoordonnateurConsulterComAction extends AbstractAction{
             request.setAttribute("message", "Coordonnateur pas creer");
         }
         
+        coord = coordDao.find(request.getParameter("id_etu"));
+        if(coord != null){
+            request.setAttribute("coordonnateur", coord);
+        }
+        
         return "coordConsulterCom";
     }
 }

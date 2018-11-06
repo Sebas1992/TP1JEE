@@ -13,7 +13,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Creer Coordonnateur</h1>
         <c:if test="${not empty requestScope.message}">
             <c:out value="${requestScope.message}" />
         </c:if>
@@ -33,6 +33,37 @@
             
             <br><input type="submit" value="S'inscrire"/>
         </form>
+        
+        <h1>Chercher coordonnateur par cle</h1>
+        <form action="" methode="get">
+            <label>Cle:</label>
+            <input type="text" name="id_etu" id="id_etu" />
+            <input type="hidden" name="action" value="coordonnateurConsulterCom" />
+            <input type="submit" value="Chercher" />
+        </form>
+        <c:choose>
+        <c:when test="${not empty requestScope.coordonnateur}">
+            <table>
+                <thead>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Courriel</th>
+                </thead>
+                <tbody
+                    <tr>
+                        <td><c:out value="${requestScope.coordonnateur.id_coordonnateur}" /></td>
+                        <td><c:out value="${requestScope.coordonnateur.nom}" /></td>
+                        <td><c:out value="${requestScope.coordonnateur.prenom}" /></td>
+                        <td><c:out value="${requestScope.coordonnateur.courriel}" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </c:when>
+            <c:otherwise>
+                <c:out value="Impossible de trouver le Coordonnateur" />
+            </c:otherwise>
+        </c:choose>
     </body>
 </html>
 

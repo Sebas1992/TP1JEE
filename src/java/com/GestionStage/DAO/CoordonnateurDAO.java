@@ -6,9 +6,11 @@
 package com.GestionStage.DAO;
 
 import com.GestionStage.Entites.Coordonnateur;
+import com.GestionStage.Entites.Utilisateur;
 import com.GestionStage.Singleton.DbConnexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
@@ -55,12 +57,33 @@ public class CoordonnateurDAO implements Dao<Coordonnateur>{
 
     @Override
     public Coordonnateur find(int key) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String keyStr = Integer.toString(key);
+        return this.find(keyStr);
     }
 
     @Override
     public Coordonnateur find(String key) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         Coordonnateur coord = new Coordonnateur();
+        String query = "SELECT * FROM utilisateur inner join coordonnateur "
+                + "on utilisateur.id_utilisateur=coordonnateur.id_coordonnateur WHERE id_utilisateur=?";
+        try{
+            Connection cnx = DbConnexion.getConnexion();
+            PreparedStatement stm = cnx.prepareStatement(query);            
+            stm.setString(1, key);
+            ResultSet rs = stm.executeQuery();
+            if(rs.next()){
+                coord.setCourriel(rs.getString("courriel"));
+                coord.setId_coordonnateur(rs.getString("id_coordonnateur"));
+                coord.setMot_de_passe(rs.getString("mot_de_passe"));
+                coord.setNom(rs.getString("nom"));
+                coord.setPrenom(rs.getString("prenom"));
+                coord.setType_utilisateur(rs.getString("type_utilisateur"));                
+                return coord;               
+            }
+        }catch(SQLException e){
+            Logger.getLogger(UtilisateurDAO.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return coord;
     }
 
     @Override
