@@ -1,6 +1,7 @@
 
 package com.GestionStage.servlets;
 
+import com.GestionStage.Controlleurs.AbstractAction;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -31,13 +32,13 @@ public class ControleurFrontal extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        Action action = ActionBuilder.getAction(request);
+        AbstractAction action = (AbstractAction) ActionBuilder.getAction(request);
         action.setRequest(request);
         action.setResponse(response);
         
         String vue = action.execute();
         
-        request.getRequestDispatcher("/WEB-INF/vues/"+vue+".jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/vues/"+vue+".jsp").forward(action.getRequest(), action.getResponse());
         
         }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

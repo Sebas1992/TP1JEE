@@ -14,8 +14,8 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-        <c:if test="${not empty param.message}">
-            <c:out value="${param.message}" />
+        <c:if test="${not empty requestScope.message}">
+            <c:out value="${requestScope.message}" />
         </c:if>
         <form action="" method="get" >
             <label>Id numero:</label>
