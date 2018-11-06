@@ -99,6 +99,27 @@
                 <c:out value="Erreur Fatale!" />
             </c:otherwise> 
         </c:choose>
+        
+        <h1>Update Coordonnateur</h1>
+        <c:if test="${not empty requestScope.messageUpdate}">
+            <c:out value="${requestScope.messageUpdate}" />
+        </c:if>
+        <form action="" method="get" >
+            <label>Id numero:</label>
+            <input type="text" name="id_etu" id="id_etu"  /><br>
+            <label>Adresse courriel:</label>
+            <input type="text" name="email" id="email"  /><br>
+            <label>Mot de passe</label>
+            <input type="text" name="mdp" id="mdp"  /><br>
+            <label>Nom:</label>
+            <input type="text" name="nom" id="nom"  /><br>
+            <label>Prenom:</label>
+            <input type="text" name="prenom" id="prenom"  /><br>
+            <input type='hidden' name='role' value="coordonnateur" />
+            <input type="hidden" name="action" value="coordonnateurConsulterCom">
+            
+            <br><input type="submit" value="Update"/>
+        </form>
     </body>
 </html>
 

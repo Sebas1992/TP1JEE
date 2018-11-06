@@ -62,6 +62,18 @@ public class CoordonnateurConsulterComAction extends AbstractAction{
             request.setAttribute("erreurFA", "Impossible de trouver la liste de coordonnateurs");
         }
              
+        // Traitement pour tester UPDATE
+        coord.setCourriel(courriel);
+        coord.setId_coordonnateur(id_etu);
+        coord.setMot_de_passe(mdp);
+        coord.setNom(nom);
+        coord.setPrenom(prenom);
+        coord.setType_utilisateur(role);
+        if(coordDao.update(coord)){
+            request.setAttribute("messageUpdate", "Succes de l'update");
+        }else{
+            request.setAttribute("messageUpdate", "Echec de l'update");
+        }
         
         return "coordConsulterCom";
     }

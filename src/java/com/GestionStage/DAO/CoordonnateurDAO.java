@@ -115,7 +115,23 @@ public class CoordonnateurDAO implements Dao<Coordonnateur>{
 
     @Override
     public boolean update(Coordonnateur x) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int rowsAffected = 0;
+        String query = "UPDATE utilisateur SET courriel=?, mot_de_passe=?, "
+                + "nom=?, prenom=? where id_utilisateur=?";
+        try{
+            Connection cnx = DbConnexion.getConnexion();
+            PreparedStatement stm = cnx.prepareStatement(query);            
+            stm.setString(1, x.getCourriel());
+            stm.setString(2, x.getMot_de_passe());
+            stm.setString(3, x.getNom());
+            stm.setString(4, x.getPrenom());            
+            stm.setString(5, x.getId_coordonnateur());
+            rowsAffected = stm.executeUpdate();
+        }catch(SQLException e){
+            Logger.getLogger(UtilisateurDAO.class.getName()).log(Level.SEVERE, null, e);
+        }
+        DbConnexion.close();
+        return rowsAffected != 0;
     }
 
     @Override
