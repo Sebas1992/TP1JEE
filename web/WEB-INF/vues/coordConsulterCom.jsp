@@ -35,7 +35,7 @@
         </form>
         
         <h1>Chercher coordonnateur par cle</h1>
-        <form action="" methode="get">
+        <form action="" method="get">
             <label>Cle:</label>
             <input type="text" name="id_etu" id="id_etu" />
             <input type="hidden" name="action" value="coordonnateurConsulterCom" />
@@ -45,12 +45,12 @@
         <c:when test="${not empty requestScope.coordonnateur}">
             <table>
                 <thead>
-                <th>Id</th>
-                <th>Nom</th>
-                <th>Prenom</th>
-                <th>Courriel</th>
+                    <th>Id</th>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Courriel</th>
                 </thead>
-                <tbody
+                <tbody>
                     <tr>
                         <td><c:out value="${requestScope.coordonnateur.id_coordonnateur}" /></td>
                         <td><c:out value="${requestScope.coordonnateur.nom}" /></td>
@@ -121,7 +121,7 @@
             <br><input type="submit" value="Update"/>
         </form>
         
-        
+        <!--
         <h1>Deleter coordonnateur</h1>
         <form action="" methode="get">
             <label>Cle:</label>
@@ -132,6 +132,7 @@
         <c:if test="${not empty requestScope.deleteUpdate}">
             <c:out value="${requestScope.deleteUpdate}" />
         </c:if>
+        -->
     </body>
 </html>
 

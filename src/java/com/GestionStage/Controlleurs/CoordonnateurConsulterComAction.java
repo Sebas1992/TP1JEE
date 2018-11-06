@@ -40,6 +40,7 @@ public class CoordonnateurConsulterComAction extends AbstractAction{
         coord.setNom(nom);
         coord.setPrenom(prenom);
         coord.setType_utilisateur(role);
+        coord.setId_utilisateur(id_etu);
         
         if(coordDao.create(coord)){
             request.setAttribute("message", "Coordonnateur bien creer");
@@ -48,9 +49,9 @@ public class CoordonnateurConsulterComAction extends AbstractAction{
         }
         
         // Traitement pour tester la recherche par cle
-        coord = coordDao.find(request.getParameter("id_etu"));
+        Coordonnateur coord1 = coordDao.find(request.getParameter("id_etu"));
         if(coord != null){
-            request.setAttribute("coordonnateur", coord);
+            request.setAttribute("coordonnateur", coord1);
         }
         
         // Traitement pour tester findAll()
@@ -74,14 +75,14 @@ public class CoordonnateurConsulterComAction extends AbstractAction{
         }else{
             request.setAttribute("messageUpdate", "Echec de l'update");
         }
-        
+        /*
         //Traitement pour tester DELETE
         if(coordDao.delete(coord)){
             request.setAttribute("deleteUpdate", "Succes du delete");
         }else{
             request.setAttribute("deleteUpdate", "Echec du delete");
         }
-        
+        */
         return "coordConsulterCom";
     }
 }

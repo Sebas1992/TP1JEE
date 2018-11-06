@@ -64,8 +64,8 @@ public class CoordonnateurDAO implements Dao<Coordonnateur>{
 
     @Override
     public Coordonnateur find(String key) {
-         Coordonnateur coord = new Coordonnateur();
-        String query = "SELECT * FROM utilisateur inner join coordonnateur "
+        Coordonnateur coord = new Coordonnateur();
+        String query = "SELECT * FROM utilisateur join coordonnateur "
                 + "on utilisateur.id_utilisateur=coordonnateur.id_coordonnateur WHERE id_utilisateur=?";
         try{
             Connection cnx = DbConnexion.getConnexion();
@@ -75,6 +75,7 @@ public class CoordonnateurDAO implements Dao<Coordonnateur>{
             if(rs.next()){
                 coord.setCourriel(rs.getString("courriel"));
                 coord.setId_coordonnateur(rs.getString("id_coordonnateur"));
+                coord.setId_utilisateur(rs.getString("id_coordonnateur"));
                 coord.setMot_de_passe(rs.getString("mot_de_passe"));
                 coord.setNom(rs.getString("nom"));
                 coord.setPrenom(rs.getString("prenom"));
