@@ -24,6 +24,11 @@ public class Etudiant extends Utilisateur{
 
     }
     
+    public Etudiant(String id_etudiant, String courriel, String mot_de_passe, String nom, String prenom, String type_utilisateur)
+    {
+        super(id_etudiant, courriel, mot_de_passe, nom, prenom, type_utilisateur);
+    }
+    
     public Etudiant(String id_etudiant, String status) {
         this.id_etudiant = id_etudiant;
         this.status = status;

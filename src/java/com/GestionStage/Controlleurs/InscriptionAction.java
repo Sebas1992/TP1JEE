@@ -32,11 +32,11 @@ public class InscriptionAction extends AbstractAction  {
         
         //creation des objets
         Etudiant etu = new Etudiant(id_etu);
-        Utilisateur utilisateur = new Utilisateur(id_etu,courriel,mdp,nom,prenom,role);
+        Etudiant etudiant = new Etudiant(id_etu,courriel,mdp,nom,prenom,role);
         
         //creation de l'etudiant dans la bd
         boolean req1=edao.create(etu);
-        boolean req2=udao.create(utilisateur);  
+        boolean req2=udao.create(etudiant);  
         if(req1 && req2){
             super.getRequest().setAttribute("message","Votre inscription est complète!");
         }

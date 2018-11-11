@@ -13,6 +13,7 @@ public class DefaultAction extends AbstractAction{
 
     @Override
     public String execute() {
-        return "coordTest";
+        //return "coordTest";
+        return "index";
     }  
 }
