@@ -5,8 +5,10 @@
  */
 package com.GestionStage.Services;
 
+import com.GestionStage.DAO.CandidatureDAO;
 import com.GestionStage.DAO.CommunicationsDAO;
 import com.GestionStage.DAO.CoordonnateurDAO;
+import com.GestionStage.Entites.Candidature;
 import com.GestionStage.Entites.Communication;
 import java.util.List;
 
@@ -19,5 +21,11 @@ public class CoordonnateurService {
     {
         CommunicationsDAO comDao = new CommunicationsDAO();
         return comDao.findCommunications();
+    }
+    
+    public List<Candidature> getCandidatures()
+    {
+        CandidatureDAO candDAO = new CandidatureDAO();
+        return candDAO.findCandidatures();
     }
 }

@@ -5,14 +5,20 @@
  */
 package com.GestionStage.Controlleurs;
 
+import com.GestionStage.Services.CoordonnateurService;
+
 /**
  *
  * @author sebas
  */
-public class DefaultAction extends AbstractAction{
+public class CoordonnateurConsulterCandidatureAction extends AbstractAction{
 
     @Override
     public String execute() {
+        CoordonnateurService coordServ = new CoordonnateurService();
+        request.setAttribute("listeCandidatures", coordServ.getCandidatures());
+        
         return "coordTest";
-    }  
+    }
+    
 }

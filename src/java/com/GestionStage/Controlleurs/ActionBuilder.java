@@ -23,6 +23,9 @@ public class ActionBuilder {
             case("coordonnateurConsulterCom"):
                 action = new CoordonnateurConsulterComAction();
                 break;
+            case("coordonnateurConsulterCand"):
+                action = new CoordonnateurConsulterCandidatureAction();
+                break;
             default :
                 action = new DefaultAction();
         }        

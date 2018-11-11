@@ -9,7 +9,7 @@ package com.GestionStage.Entites;
  *
  * @author Nicolas
  */
-public class Etudiant {
+public class Etudiant extends Utilisateur{
     
     private String id_etudiant;
     private String status;
