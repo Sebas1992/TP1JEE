@@ -32,13 +32,13 @@ public class ControleurFrontal extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        AbstractAction action = (AbstractAction) ActionBuilder.getAction(request);
+        Action action = ActionBuilder.getAction(request);
         action.setRequest(request);
         action.setResponse(response);
         
         String vue = action.execute();
         
-        request.getRequestDispatcher("/WEB-INF/vues/"+vue+".jsp").forward(action.getRequest(), action.getResponse());
+        request.getRequestDispatcher("/WEB-INF/vues/"+vue+".jsp").forward(request, response);
         
         }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
