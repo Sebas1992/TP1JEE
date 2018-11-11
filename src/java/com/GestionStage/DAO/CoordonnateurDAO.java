@@ -159,35 +159,4 @@ public class CoordonnateurDAO implements Dao<Coordonnateur>{
         }
         return resultat == 2;
     }
-    
-    public List<Communication> findCommunications(){        
-        List<Communication> listeCom = new LinkedList();
-        UtilisateurDAO userDAO = new UtilisateurDAO();
-        
-        String query="select titre, message, message.id_expediteur as expediteur, utilisateurmessage.id_destinataire as destinataire" +
-                " from message inner join utilisateurmessage" +
-                " on message.id_message=utilisateurmessage.id_message";
-        try {
-            Connection cnx = DbConnexion.getConnexion();            
-            PreparedStatement stm = cnx.prepareStatement(query);
-            ResultSet rs = stm.executeQuery();
-            while(rs.next()){
-                // On va chercher l'expediteur 
-                Utilisateur exp = userDAO.find(rs.getString("expediteur"));
-                // On va chercher le destinataire
-                Utilisateur dest = userDAO.find(rs.getString("destinataire"));
-                
-                Communication com = new Communication();
-                com.setTitre(rs.getString("titre"));
-                com.setMessage(rs.getString("message"));
-                com.setDestinataire(dest);
-                com.setExpediteur(exp);
-                
-                listeCom.add(com);
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(CoordonnateurDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return listeCom;
-    }
 }

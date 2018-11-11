@@ -32,6 +32,12 @@ public class Utilisateur {
         this.type_utilisateur = type_utilisateur;
     }
     
+    public Utilisateur(String nom, String prenom)
+    {
+        this.nom = nom;
+        this.prenom = prenom;
+    }
+    
     /**
      * @return the id_utilisateur
      */

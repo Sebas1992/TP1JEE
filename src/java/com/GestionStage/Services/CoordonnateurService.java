@@ -5,6 +5,7 @@
  */
 package com.GestionStage.Services;
 
+import com.GestionStage.DAO.CommunicationsDAO;
 import com.GestionStage.DAO.CoordonnateurDAO;
 import com.GestionStage.Entites.Communication;
 import java.util.List;
@@ -16,7 +17,7 @@ import java.util.List;
 public class CoordonnateurService {
     public List<Communication> getCommunications()
     {
-        CoordonnateurDAO coordDao = new CoordonnateurDAO();
-        return coordDao.findCommunications();
+        CommunicationsDAO comDao = new CommunicationsDAO();
+        return comDao.findCommunications();
     }
 }
