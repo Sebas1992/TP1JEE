@@ -26,6 +26,9 @@ public class ActionBuilder {
             case("coordonnateurConsulterCand"):
                 action = new CoordonnateurConsulterCandidatureAction();
                 break;
+            case("coordonnateurUploadFile"):
+                action = new CoordonnateurUploadFileAction();
+                break;
             default :
                 action = new DefaultAction();
         }        

@@ -84,6 +84,13 @@
                 </c:forEach>
             </tbody>
         </table>
+        <br />
+        <h1>Uploader fichier</h1>
+        <form action="coordonnateurUploadFile" method="POST" enctype='multipart/form-data'>
+            <input type="hidden" name="action" value="coordonnateurUploadFile" />
+            <input type="file" name="fichier" />
+            <input type="submit" value="Upload" />
+        </form>
     </body>
 </html>
 
