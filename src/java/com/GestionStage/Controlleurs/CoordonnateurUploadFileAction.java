@@ -11,7 +11,7 @@ import com.GestionStage.Services.CoordonnateurService;
  *
  * @author sebas
  */
-public class CoordonnateurUploadFileAction extends AbstractAction{
+public class CoordonnateurUploadFileAction extends AbstractAction implements RequirePRG{
 
     @Override
     public String execute() {

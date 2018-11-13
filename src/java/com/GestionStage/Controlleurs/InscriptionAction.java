@@ -14,7 +14,7 @@ import com.GestionStage.Entites.Utilisateur;
  *
  * @author Nicolas
  */
-public class InscriptionAction extends AbstractAction  {
+public class InscriptionAction extends AbstractAction  implements RequirePRG{
     @Override
     public String execute() {
         
