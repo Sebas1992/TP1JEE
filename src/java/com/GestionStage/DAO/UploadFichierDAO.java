@@ -17,7 +17,7 @@ import java.util.logging.Logger;
  *
  * @author sebas
  */
-public class uploadFichierDAO {
+public class UploadFichierDAO {
     public boolean create(Document x)
     {         
             String query = "INSERT INTO document (id_document, lien, type, nb_vues, id_coordonnateur, date)"
@@ -35,7 +35,7 @@ public class uploadFichierDAO {
             rowsAffected = stm.executeUpdate();
             
         } catch (SQLException ex) {
-            Logger.getLogger(uploadFichierDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UploadFichierDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return rowsAffected != 0;
     }

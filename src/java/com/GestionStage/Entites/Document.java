@@ -19,6 +19,10 @@ public class Document {
     private String id_coordonnateur;
     private Timestamp date;
 
+    public Document(){
+        
+    }
+    
     public Document(String id_document, String lien, String type, int nb_vues, String id_coordonnateur, Timestamp date)
     {
         this.id_document = id_document;
