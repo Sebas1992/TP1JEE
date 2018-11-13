@@ -5,15 +5,18 @@
  */
 package com.GestionStage.Controlleurs;
 
+import com.GestionStage.Services.CoordonnateurService;
+
 /**
  *
  * @author sebas
  */
-public class DefaultAction extends AbstractAction{
+public class CoordonnateurUploadFileAction extends AbstractAction{
 
     @Override
     public String execute() {
+        CoordonnateurService coordServ = new CoordonnateurService();
+        coordServ.UploadFile(request);
         return "coordTest";
-        //return "index";
-    }  
+    }    
 }

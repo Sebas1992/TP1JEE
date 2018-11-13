@@ -12,11 +12,13 @@ import com.GestionStage.Controlleurs.ActionBuilder;
 import com.GestionStage.Controlleurs.Action;
 import com.GestionStage.Singleton.DbConnexion;
 import java.sql.Connection;
+import javax.servlet.annotation.MultipartConfig;
 
 /**
  *
  * @author Utilisateur
  */
+@MultipartConfig
 public class ControleurFrontal extends HttpServlet {
 
     /**
