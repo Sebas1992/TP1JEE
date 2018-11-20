@@ -10,13 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.GestionStage.Controlleurs.ActionBuilder;
 import com.GestionStage.Controlleurs.Action;
+import com.GestionStage.Controlleurs.RequirePRG;
 import com.GestionStage.Singleton.DbConnexion;
 import java.sql.Connection;
+import javax.servlet.annotation.MultipartConfig;
 
 /**
  *
  * @author Utilisateur
  */
+@MultipartConfig
 public class ControleurFrontal extends HttpServlet {
 
     /**
@@ -38,9 +41,16 @@ public class ControleurFrontal extends HttpServlet {
         
         String vue = action.execute();
         
-        request.getRequestDispatcher("/WEB-INF/vues/"+vue+".jsp").forward(request, response);
-        
+        if(action instanceof RequirePRG)
+        {
+            response.sendRedirect("?action=" + vue);
         }
+        else
+        {
+            request.getRequestDispatcher("/WEB-INF/vues/"+vue+".jsp").forward(request, response);
+        }
+        
+    }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

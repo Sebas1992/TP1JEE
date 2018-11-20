@@ -17,6 +17,9 @@ public class ActionBuilder {
         }
         // Toutes nos actions devront être ajouté ici
         switch (actionAFaire) {
+            case("show"):
+                action = new ShowViewAction();
+                break;
             case("inscription"):
                 action = new InscriptionAction();
                 break;
@@ -25,6 +28,9 @@ public class ActionBuilder {
                 break;
             case("coordonnateurConsulterCand"):
                 action = new CoordonnateurConsulterCandidatureAction();
+                break;
+            case("coordonnateurUploadFile"):
+                action = new CoordonnateurUploadFileAction();
                 break;
             default :
                 action = new DefaultAction();
