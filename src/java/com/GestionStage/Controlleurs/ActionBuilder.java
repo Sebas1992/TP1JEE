@@ -32,6 +32,9 @@ public class ActionBuilder {
             case("coordonnateurUploadFile"):
                 action = new CoordonnateurUploadFileAction();
                 break;
+            case("employeurInscription"):
+                action = new EmployeurInscriptionAction();
+                break;
             default :
                 action = new DefaultAction();
         }        

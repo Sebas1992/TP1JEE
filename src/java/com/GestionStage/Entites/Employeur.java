@@ -9,10 +9,10 @@ package com.GestionStage.Entites;
  *
  * @author sebas
  */
-public class Employeur {
+public class Employeur extends Utilisateur{
     private String id_employeur;
     private String tel;
-    private Compagnie compagnie;
+    private String id_compagnie;
 
     /**
      * @return the id_employeur
@@ -45,14 +45,14 @@ public class Employeur {
     /**
      * @return the compagnie
      */
-    public Compagnie getCompagnie() {
-        return compagnie;
+    public String get_IDCompagnie() {
+        return id_compagnie;
     }
 
     /**
      * @param compagnie the compagnie to set
      */
-    public void setCompagnie(Compagnie compagnie) {
-        this.compagnie = compagnie;
+    public void set_IDCompagnie(String id_compagnie) {
+        this.id_compagnie = id_compagnie;
     }
 }

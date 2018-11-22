@@ -13,7 +13,7 @@ public class Compagnie {
     private String id_compagnie;
     private String nom;
     private String site_web;
-    private Adresse adresse;
+    private String id_adresse;
 
     /**
      * @return the id_compagnie
@@ -60,14 +60,14 @@ public class Compagnie {
     /**
      * @return the adresse
      */
-    public Adresse getAdresse() {
-        return adresse;
+    public String get_IDAdresse() {
+        return id_adresse;
     }
 
     /**
      * @param adresse the adresse to set
      */
-    public void setAdresse(Adresse adresse) {
-        this.adresse = adresse;
+    public void set_IDAdresse(String id_adresse) {
+        this.id_adresse = id_adresse;
     }
 }
