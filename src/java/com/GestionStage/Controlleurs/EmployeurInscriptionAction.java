@@ -17,7 +17,7 @@ import java.util.UUID;
  *
  * @author sebas
  */
-public class EmployeurInscriptionAction extends AbstractAction implements RequirePRG{
+public class employeurInscriptionAction extends AbstractAction implements RequirePRG{
     @Override
     public String execute() {
         // Preparation des services
@@ -29,7 +29,7 @@ public class EmployeurInscriptionAction extends AbstractAction implements Requir
         if(cService.estInscris(request.getParameter("nomComp")))
         {
             request.setAttribute("message", "La compagnie existe déjà");
-            return "EmployeurInscription";
+            return "employeurInscription";
         }
         
         // Preparation des id
@@ -73,13 +73,13 @@ public class EmployeurInscriptionAction extends AbstractAction implements Requir
         {
             // Si tout s'est bien deroule, on envoie un message l'utilisateur
             request.setAttribute("message", "Compagnie bien cree");
-            return "EmployeurInscription";
+            return "employeurInscription";
         }
         else
         {
             // Sinon on lui envoie un message lui disant que linsertion a echoue
             request.setAttribute("message", "Impossible de creer la compagnie");
-            return "EmployeurInscription"; // A changer quand on va implementer les vues
+            return "employeurInscription"; // A changer quand on va implementer les vues
         }
     }
     
