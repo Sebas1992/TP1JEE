@@ -17,7 +17,7 @@ import java.util.UUID;
  *
  * @author sebas
  */
-public class employeurInscriptionAction extends AbstractAction implements RequirePRG{
+public class EmployeurInscriptionAction extends AbstractAction implements RequirePRG{
     @Override
     public String execute() {
         // Preparation des services

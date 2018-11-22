@@ -43,7 +43,7 @@ public class ControleurFrontal extends HttpServlet {
         
         if(action instanceof RequirePRG)
         {
-            response.sendRedirect("?action=" + vue);
+            response.sendRedirect("?action=show&vue=" + vue);
         }
         else
         {
