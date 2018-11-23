@@ -18,7 +18,7 @@ public class CoordonnateurConsulterCandidatureAction extends AbstractAction{
         CoordonnateurService coordServ = new CoordonnateurService();
         request.setAttribute("listeCandidatures", coordServ.getCandidatures());
         
-        return "coordTest";
+        return "coordConsulterCand";
     }
     
 }
