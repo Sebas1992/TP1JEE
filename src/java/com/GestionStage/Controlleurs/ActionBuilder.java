@@ -20,7 +20,7 @@ public class ActionBuilder {
             case("show"):
                 action = new ShowViewAction();
                 break;
-            case("inscription"):
+            case("etudiantInscription"):
                 action = new InscriptionAction();
                 break;
             case("coordonnateurConsulterCom"):

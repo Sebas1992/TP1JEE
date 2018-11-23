@@ -17,6 +17,6 @@ public class CoordonnateurUploadFileAction extends AbstractAction implements Req
     public String execute() {
         CoordonnateurService coordServ = new CoordonnateurService();
         coordServ.UploadFile(request);
-        return "coordTest";
+        return "coordDocuments";
     }    
 }

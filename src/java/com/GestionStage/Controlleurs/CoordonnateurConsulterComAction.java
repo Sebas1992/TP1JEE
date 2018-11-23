@@ -26,6 +26,6 @@ public class CoordonnateurConsulterComAction extends AbstractAction{
         CoordonnateurService service = new CoordonnateurService();
         request.setAttribute("listeCom", service.getCommunications());
                 
-        return "coordTest";
+        return "coordConsulterCom";
     }
 }

@@ -13,15 +13,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="http://www.crosemont.qc.ca/"><img id="logo" src="../images/logoCouper.png"/></a>
+            <a class="navbar-brand" href="?action=default"><img id="logo" src="../images/logoCouper.png"/></a>
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse-main">
             <div id="choixMenu">
                 <ul class="nav navbar-nav navbar-left">
                     <li><a class="#" href="">Mon profil</a></li>
                     <li><a class="#" href="">Offres de stage</a></li>
-                    <li><a class="#" href="">Documents</a></li>
-                    <li><a class="#" href="">Recherche Étudiant</a></li>
+                    <li><a class="#" href="?action=coordonnateurUploadFile">Documents</a></li>
+                    <li><a class="#" href="?action=coordonnateurConsulterCom">Communications</a></li>
                     <li><a class="#" href="?action=coordonnateurConsulterCand">Candidatures</a></li>
                 </ul>
             </div>

@@ -41,7 +41,7 @@ public class InscriptionAction extends AbstractAction  implements RequirePRG{
             super.getRequest().setAttribute("message","Votre inscription est complète!");
         }
                 
-        return "index";
+        return "etudiantInscription";
     }
     
 }

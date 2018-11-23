@@ -9,29 +9,15 @@
 <html>
     <%@include file="./head.jsp" %>
     <body>
-        <%@include file="./menu.jsp" %>
-        <h1>Hello World!</h1>
-        <% 
-            if(request.getParameter("message")!=null){
-        %>      <h2><% request.getParameter("message"); %>/h2><%
-            }
-        
-        %>
-        <form action="" method="get" >
-            <label>Id numero:</label>
-            <input type="text" name="id_etu" id="id_etu"  /><br>
-            <label>Adresse courriel:</label>
-            <input type="text" name="email" id="email"  /><br>
-            <label>Mot de passe</label>
-            <input type="text" name="mdp" id="mdp"  /><br>
-            <label>Nom:</label>
-            <input type="text" name="nom" id="nom"  /><br>
-            <label>Prenom:</label>
-            <input type="text" name="prenom" id="prenom"  /><br>
-            <input type='hidden' name='role' value="etudiant" />
-            <input type="hidden" name="action" value="inscription">
-            
-            <br><input type="submit" value="S'inscrire"/>
-        </form>
+        <%@include file="./menu.jsp" %>    
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <h2>Inscriptions</h2>
+        <a href="?action=employeurInscription">Employeur</a> <br />
+        <a href="?action=etudiantInscription">Etudiant</a>
     </body>
 </html>
