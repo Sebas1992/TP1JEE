@@ -14,10 +14,13 @@ import com.GestionStage.Entites.Utilisateur;
  *
  * @author Nicolas
  */
-public class InscriptionAction extends AbstractAction  implements RequirePRG{
+public class EtudiantInscriptionAction extends AbstractAction  implements RequirePRG{
     @Override
     public String execute() {
         
+//        if (super.getRequest().getParameter("id_etu")==null || super.getRequest().getParameter("id_etu").equals("")){
+//            return "etudiantInscription";
+//        }
         //preparation dao
         DaoEtudiant edao = new DaoEtudiant();
         UtilisateurDAO udao = new UtilisateurDAO();
@@ -36,9 +39,13 @@ public class InscriptionAction extends AbstractAction  implements RequirePRG{
         
         //creation de l'etudiant dans la bd
         boolean req1=edao.create(etu);
-        boolean req2=udao.create(etudiant);  
+        boolean req2=udao.create(etudiant);
+        System.out.println(req1+""+req2);
         if(req1 && req2){
             super.getRequest().setAttribute("message","Votre inscription est complète!");
+        }
+        else{
+            super.getRequest().setAttribute("message","Votre inscription n'a pas fonctionné!");
         }
                 
         return "etudiantInscription";

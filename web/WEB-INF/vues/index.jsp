@@ -19,5 +19,7 @@
         <h2>Inscriptions</h2>
         <a href="?action=employeurInscription">Employeur</a> <br />
         <a href="?action=etudiantInscription">Etudiant</a>
+        <h2>Profil etudiant</h2>
+        <a href="?action=etudiantProfil">Etudiant profil</a>
     </body>
 </html>

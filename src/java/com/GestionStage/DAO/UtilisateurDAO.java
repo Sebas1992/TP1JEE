@@ -129,7 +129,29 @@ public class UtilisateurDAO implements Dao<Utilisateur>{
                 utilisateur.setNom(rs.getString("nom"));
                 utilisateur.setPrenom(rs.getString("prenom"));
                 utilisateur.setType_utilisateur(rs.getString("type_utilisateur"));                
-                return utilisateur;               
+                //return utilisateur;               
+            }
+        }catch(SQLException e){
+            Logger.getLogger(UtilisateurDAO.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return utilisateur;
+    }
+    public Utilisateur findByCourriel(String key) {
+        Utilisateur utilisateur = new Utilisateur();
+        String query = "SELECT * FROM utilisateur WHERE courriel=?";
+        try{
+            Connection cnx = DbConnexion.getConnexion();
+            PreparedStatement stm = cnx.prepareStatement(query);            
+            stm.setString(1, key);
+            ResultSet rs = stm.executeQuery();
+            if(rs.next()){
+                utilisateur.setCourriel(rs.getString("courriel"));
+                utilisateur.setId_utilisateur(rs.getString("id_utilisateur"));
+                utilisateur.setMot_de_passe(rs.getString("mot_de_passe"));
+                utilisateur.setNom(rs.getString("nom"));
+                utilisateur.setPrenom(rs.getString("prenom"));
+                utilisateur.setType_utilisateur(rs.getString("type_utilisateur"));                
+                //return utilisateur;               
             }
         }catch(SQLException e){
             Logger.getLogger(UtilisateurDAO.class.getName()).log(Level.SEVERE, null, e);

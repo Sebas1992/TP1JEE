@@ -205,3 +205,15 @@
     margin: 1em 0 0 0;
     float: right;
 }
+
+/* Pour la page d'accueil connection */
+#fond-connection {
+    background-size:cover;
+    background-image : url('../images/autumn-bg.jpg');
+    background-repeat:no-repeat;
+}
+#menu-connection {
+    margin-top:40%;
+    background-color:white;
+    padding:20px;
+}

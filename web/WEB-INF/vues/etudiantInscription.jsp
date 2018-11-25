@@ -31,7 +31,7 @@
             <label>Prenom:</label>
             <input type="text" name="prenom" id="prenom"  /><br>
             <input type='hidden' name='role' value="etudiant" />
-            <input type="hidden" name="action" value="inscription">
+            <input type="hidden" name="action" value="etudiantInscription">
             
             <br><input type="submit" value="S'inscrire"/>
         </form>

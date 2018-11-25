@@ -20,8 +20,11 @@ public class ActionBuilder {
             case("show"):
                 action = new ShowViewAction();
                 break;
+            case("etudiantProfil"):
+                action = new EtudiantProfilAction();
+                break;
             case("etudiantInscription"):
-                action = new InscriptionAction();
+                action = new EtudiantInscriptionAction();
                 break;
             case("coordonnateurConsulterCom"):
                 action = new CoordonnateurConsulterComAction();
@@ -35,8 +38,15 @@ public class ActionBuilder {
             case("employeurInscription"):
                 action = new EmployeurInscriptionAction();
                 break;
+            case("deconnection"):
+                action = new DeconnectionAction();
+                break;
+            case("connection"):
+                action = new ConnectionAction();
+                break;
             default :
-                action = new DefaultAction();
+//                action = new DefaultAction();
+                action = new ConnectionAction();
         }        
         return action;
     }
