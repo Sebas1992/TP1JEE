@@ -162,6 +162,18 @@
                                 </tbody>
                             </table>
                         </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-sm-10">
+                                <label for="statut_recherche">Statut de recherche:</label> 
+                            </div>
+                            <div class="col-lg-7 col-sm-10">
+                                <select class="form-control" id="statut_recherche" name="statut_recherche">
+                                    <option>En recherche de stage</option>
+                                    <option>Stage trouvé</option>
+                                    <option>Confirmé</option>
+                                </select>
+                            </div>
+                        </div>
                         <div class="row" id="rowGaucheBas">
                             <div class="col-lg-7" id="spec">
                                 <div class="form-group inline">
@@ -174,7 +186,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <input type="hidden" name="action" value="etudiantProfil">
+                            <input type="hidden" name="action" value="etudiantModifierProfil">
                             <div class="col-lg-4">
                                 <input type="submit" class="btn btn-primary" value="Enregistrer les modifications">
                             </div>

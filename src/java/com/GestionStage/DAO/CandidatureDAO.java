@@ -23,6 +23,24 @@ import java.util.logging.Logger;
  * @author sebas
  */
 public class CandidatureDAO {
+    
+    public boolean create(Candidature candidature,String ido){
+        Connection cnx = DbConnexion.getConnexion();
+        boolean res=false;
+        try{
+            PreparedStatement stm=cnx.prepareStatement("INSERT INTO candidature VALUES (?,?,?,?) ");
+            stm.setString(1,candidature.getEtudiant().getId_utilisateur());
+            stm.setString(2,ido);
+            stm.setTimestamp(3,candidature.getDate());
+            stm.setString(4,candidature.getStatut());
+            res = stm.execute();
+            stm.close();
+        }catch(SQLException ex){
+            Logger.getLogger(DaoEtudiant.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return res;    
+    }
+    
     public List<Candidature> findCandidatures()    
     {        
         List<Candidature> listeCand = new LinkedList();

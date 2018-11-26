@@ -23,6 +23,7 @@
                     <li><a class="#" href="?action=coordonnateurUploadFile">Documents</a></li>
                     <li><a class="#" href="?action=coordonnateurConsulterCom">Communications</a></li>
                     <li><a class="#" href="?action=coordonnateurConsulterCand">Candidatures</a></li>
+                    <li><a class="#" href="?action=deconnection">Se déconnecter</a></li>
                 </ul>
             </div>
         </div>

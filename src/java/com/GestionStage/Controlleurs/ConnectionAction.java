@@ -21,13 +21,22 @@ public class ConnectionAction extends AbstractAction{
         System.out.println("Email :"+request.getParameter("email"));
         System.out.println("MDP :"+request.getParameter("password"));
         
+        if (session.getAttribute("connected")!=null){
+            System.out.println("deuxieme condition!!!");
+            Utilisateur utilisateur = (Utilisateur)session.getAttribute("connected");
+            switch (utilisateur.getType_utilisateur()){
+            case("etudiant"):
+                return "profilEtudiant";
+            case("employeur"):
+                return "coordConsulterCand";
+            default:
+                return "coordConsulterCand";
+            }
+        }
+        
         if (request.getParameter("email")==null || "".equals(request.getParameter("email"))){
             System.out.println("premiere condition!!!");
             return "connection";
-        }
-        if (session.getAttribute("connected")!=null){
-            System.out.println("deuxieme condition!!!");
-            return "index";
         }
         
         String identifiant= request.getParameter("email"), mdp=request.getParameter("password");
@@ -51,7 +60,7 @@ public class ConnectionAction extends AbstractAction{
         switch (utilisateur.getType_utilisateur()){
             case("etudiant"):
                 return "profilEtudiant";
-            case("employeur"):
+            case("Employeur"):
                 return "coordConsulterCand";
             default:
                 return "coordConsulterCand";

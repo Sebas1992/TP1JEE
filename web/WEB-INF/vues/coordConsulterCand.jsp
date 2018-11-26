@@ -11,6 +11,7 @@
     <%@include file="./head.jsp" %>
     <body>
         <%@include file="./menu.jsp" %>
+        <br><br><br><br><br><br><br><br><br>
         <h1>Consulter Candidatures</h1>
         <table border="1">
             <thead>

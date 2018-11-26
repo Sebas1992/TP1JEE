@@ -23,8 +23,14 @@ public class ActionBuilder {
             case("etudiantProfil"):
                 action = new EtudiantProfilAction();
                 break;
+            case("etudiantModifierProfil"):
+                action = new EtudiantModifierProfilAction();
+                break;
             case("etudiantInscription"):
                 action = new EtudiantInscriptionAction();
+                break;
+            case("etudiantPostule"):
+                action = new EtudiantPostulerAction();
                 break;
             case("coordonnateurConsulterCom"):
                 action = new CoordonnateurConsulterComAction();
