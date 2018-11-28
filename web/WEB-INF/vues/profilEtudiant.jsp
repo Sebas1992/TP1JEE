@@ -33,7 +33,7 @@
                     <div id="choixMenu">
                         <ul class="nav navbar-nav navbar-left">
                             <li><a class="#" href="">Mon profil</a></li>
-                            <li><a class="#" href="">Offres de stage</a></li>
+                            <li><a class="#" href="?action=etudiantConsulterStage">Offres de stage</a></li>
                             <li><a class="#" href="">Documents</a></li>
                             <li><a class="#" href="">Communication</a></li>
                             <li><a class="#" href="?action=deconnection">Se déconnecter</a></li>

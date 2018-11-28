@@ -20,6 +20,9 @@ public class ActionBuilder {
             case("show"):
                 action = new ShowViewAction();
                 break;
+            case("etudiantConsulterStage"):
+                action = new EtudiantConsulterStageAction();
+                break;
             case("etudiantProfil"):
                 action = new EtudiantProfilAction();
                 break;
@@ -40,6 +43,9 @@ public class ActionBuilder {
                 break;
             case("coordonnateurUploadFile"):
                 action = new CoordonnateurUploadFileAction();
+                break;
+            case("employeurContacterEtudiant"):
+                action = new EmployeurContacterEtudiantAction();
                 break;
             case("employeurInscription"):
                 action = new EmployeurInscriptionAction();

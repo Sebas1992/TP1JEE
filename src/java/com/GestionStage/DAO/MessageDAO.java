@@ -34,7 +34,7 @@ public class MessageDAO implements Dao<Message>
             stm.setString(1, x.getTitre());
             stm.setString(2, x.getMessage());
             stm.setInt(3, x.getVu());
-            stm.setDate(4, x.getDate());
+            stm.setTimestamp(4, x.getDate());
             stm.setTime(5, x.getHeure());
             stm.setString(6, x.getId_expediteur());
             rowsAffected = stm.executeUpdate();
@@ -56,7 +56,7 @@ public class MessageDAO implements Dao<Message>
             while(rs.next())
             {
                 Message message = new Message();
-                message.setDate(rs.getDate("date"));
+                message.setDate(rs.getTimestamp("date"));
                 message.setHeure(rs.getTime("heure"));
                 message.setId_expediteur(rs.getString("id_expediteur"));
                 message.setId_message(rs.getString("id_message"));
@@ -80,7 +80,7 @@ public class MessageDAO implements Dao<Message>
         try{
             Connection cnx = DbConnexion.getConnexion();
             PreparedStatement stm = cnx.prepareStatement(query);
-            stm.setDate(1, x.getDate());
+            stm.setTimestamp(1, x.getDate());
             stm.setTime(2, x.getHeure());
             stm.setString(3, x.getId_expediteur());
             stm.setString(4, x.getTitre());
@@ -125,7 +125,7 @@ public class MessageDAO implements Dao<Message>
             stm.setString(1, key);
             ResultSet rs = stm.executeQuery();
             if(rs.next()){
-                message.setDate(rs.getDate("date"));
+                message.setDate(rs.getTimestamp("date"));
                 message.setHeure(rs.getTime("heure"));
                 message.setId_expediteur(rs.getString("id_expediteur"));
                 message.setId_message(rs.getString("id_message"));

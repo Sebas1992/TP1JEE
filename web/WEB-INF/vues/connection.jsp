@@ -48,6 +48,8 @@
                     <a href="?action=etudiantInscription">Etudiant</a>
                     <h2>Profil etudiant</h2>
                     <a href="?action=etudiantProfil">Etudiant profil</a>
+                    <h2>Employeur vue</h2>
+                    <a href="?action=employeurContacterEtudiant">message Employeur à étudiant</a>
                 </div>
         </div>
     </body>

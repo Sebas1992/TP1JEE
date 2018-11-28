@@ -9,7 +9,10 @@ import com.GestionStage.Entites.Etudiant;
 import com.GestionStage.Singleton.DbConnexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -18,6 +21,7 @@ import java.util.logging.Logger;
  * @author Nicolas
  */
 public class DaoEtudiant {
+    
     public boolean create(Etudiant etu){
         Connection cnx = DbConnexion.getConnexion();
         boolean res=false;
@@ -32,6 +36,7 @@ public class DaoEtudiant {
         }
         return res;    
     }
+    
     public boolean update(Etudiant etu){
         Connection cnx = DbConnexion.getConnexion();
         boolean res=false;
@@ -47,4 +52,25 @@ public class DaoEtudiant {
         return res;
     }
     //ajouter delete
+    
+    public List<Etudiant> findAll() {
+        List<Etudiant> liste = new LinkedList<>();
+        String query = "Select * FROM etudiant";
+        try{
+            Connection cnx = DbConnexion.getConnexion();
+            PreparedStatement stm = cnx.prepareStatement(query);
+            ResultSet rs = stm.executeQuery();
+            while(rs.next())
+            {
+                Etudiant etu = new Etudiant();
+                etu.setId_etudiant(rs.getString("id_etudiant"));
+                etu.setStatus(rs.getString("statut_recherche"));
+                liste.add(etu);
+            }
+        }catch(SQLException e){
+            Logger.getLogger(UtilisateurDAO.class.getName()).log(Level.SEVERE, null, e);
+        }
+        DbConnexion.close();
+        return liste;
+    }
 }

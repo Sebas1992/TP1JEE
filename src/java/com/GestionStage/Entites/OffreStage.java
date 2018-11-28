@@ -5,6 +5,7 @@
  */
 package com.GestionStage.Entites;
 
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.UUID;
 
@@ -12,28 +13,31 @@ import java.util.UUID;
  *
  * @author Nicolas
  */
-public class Offrestage {
+public class OffreStage {
     
     private String id_offre;
     private String titre;
     private String description;
     private String lien_web;
     private String lien_document;
-    private Date date;
+    private Timestamp date;
     private int nb_vues;
     private int active;
     private String id_employeur;
 
-    public Offrestage(String titre, String description, String lien_web, String lien_document, String id_employeur) {
+    public OffreStage(String titre, String description, String lien_web, String lien_document, String id_employeur) {
         this.id_offre= UUID.randomUUID().toString();
         this.titre = titre;
         this.description = description;
         this.lien_web = lien_web;
         this.lien_document = lien_document;
-        this.date = new Date();
+        this.date = new Timestamp(System.currentTimeMillis());
         this.nb_vues=0;
         this.active=0;
         this.id_employeur = id_employeur;
+    }
+
+    public OffreStage() {
     }
     
     public String getIdOffre() {
@@ -76,11 +80,11 @@ public class Offrestage {
         this.lien_document = lien_document;
     }
 
-    public Date getDate() {
+    public Timestamp getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(Timestamp date) {
         this.date = date;
     }
 

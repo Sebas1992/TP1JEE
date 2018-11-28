@@ -7,6 +7,7 @@ package com.GestionStage.Entites;
 
 import java.sql.Date;
 import java.sql.Time;
+import java.sql.Timestamp;
 
 /**
  *
@@ -17,7 +18,7 @@ public class Message {
     private String titre;
     private String message;
     private int vu;
-    private Date date;
+    private Timestamp date;
     private Time heure;
     private String id_expediteur;
 
@@ -80,14 +81,14 @@ public class Message {
     /**
      * @return the date
      */
-    public Date getDate() {
+    public Timestamp getDate() {
         return date;
     }
 
     /**
      * @param date the date to set
      */
-    public void setDate(Date date) {
+    public void setDate(Timestamp date) {
         this.date = date;
     }
 
