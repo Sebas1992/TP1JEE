@@ -11,6 +11,7 @@
     <%@include file="./head.jsp" %>
     <body>
         <%@include file="./menu.jsp" %>
+        <br><br><br><br><br><br><br><br><br>
         <h1>Uploader fichier</h1>
         <c:out value="${message}" />
         <form action="coordonnateurUploadFile" method="POST" enctype='multipart/form-data'>
