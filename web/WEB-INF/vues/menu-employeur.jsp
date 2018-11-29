@@ -13,14 +13,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="?action=default"><img id="logo" src="./static/images/logoCouper.png"/></a>
+            <a class="navbar-brand" href="?action=profilEmployeur"><img id="logo" src="./static/images/logoCouper.png"/></a>
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse-main">
             <div id="choixMenu">
                 <ul class="nav navbar-nav navbar-left">
-                    <li><a class="#" href="">Mon profil</a></li>
-                    <li><a class="#" href="">Publier une offre de stage</a></li>
-                    <li><a class="#" href="">Rechercher Candidat</a></li>
+                    <li><a class="#" href="?action=profilEmployeur">Mon profil</a></li>
+                    <li><a class="#" href="?action=profilEmployeur">Publier une offre de stage</a></li>
+                    <li><a class="#" href="?action=profilEmployeur">Rechercher Candidat</a></li>
                     <li><a class="#" href="?action=deconnection">Se déconnecter</a></li>
                 </ul>
             </div>

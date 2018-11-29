@@ -10,41 +10,124 @@
 <html>
     <%@include file="./head.jsp" %>
     <body>
-        <%@include file="./menu.jsp" %>
-        <h1>Hello World!</h1>
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="menu">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" id="btnMenuColl" data-toggle="collapse" data-target="#navbar-collapse-main">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            <a class="navbar-brand" href="?action=default"><img id="logo" src="./static/images/logoCouper.png"/></a>
+        </div>
+        </nav>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <h2>${requestScope.message}</h2>
-        <form action="" method="get" >
-            <label>Adresse courriel:</label>
-            <input type="text" name="courriel" id="courriel"  /><br>
-            <label>Mot de passe</label>
-            <input type="text" name="mot_de_passe" id="mot_de_passe"  /><br>
-            <label>Nom:</label>
-            <input type="text" name="nomEmp" id="nomEmp"  /><br>
-            <label>Prenom:</label>
-            <input type="text" name="prenomEmp" id="prenomEmp"  /><br>            
-            <label>Telephone:</label>
-            <input type="text" name="tel" id="tel"  /><br>
-            <input type="hidden" name="action" value="employeurInscription">
-            <label>Nom compagnie:</label>
-            <input type="text" name="nomComp" id="nomComp"  /><br>
-            <label>Site web</label>
-            <input type="text" name="site_web" id="site_web"  /><br>
-            <label>Numero civique:</label>
-            <input type="text" name="numero_civique" id="numero_civique"  /><br>
-            <label>Rue:</label>
-            <input type="text" name="rue" id="rue"  /><br>
-            <label>Bureau:</label>
-            <input type="text" name="bureau" id="bureau"  /><br>
-            <label>Ville:</label>
-            <input type="text" name="ville" id="ville"  /><br>
-            <label>Code postal:</label>
-            <input type="text" name="code_postal" id="code_postal"  /><br>
-            <label>Province:</label>
-            <input type="text" name="province" id="province"  /><br>
-            <label>Pays</label>
-            <input type="text" name="pays" id="pays"  /><br>
-            <input type="hidden" name="action" value="employeurInscription" />
-            <br><input type="submit" value="S'inscrire"/>
-        </form>
+        <form class="form-horizontal" action="" method="get">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="container-fluid">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="nom" class="col-sm-3 col-form-label">Nom :</label>
+                                    <div class="col-sm-8">
+                                      <input type="text" class="form-control" name="nomEmp" id="nomEmp" placeholder="John">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="prenom" class="col-sm-3 col-form-label">Prénom :</label>
+                                    <div class="col-sm-8">
+                                      <input type="text" class="form-control" name="prenomEmp" id="prenomEmp" placeholder="Doe">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="col-sm-3 col-form-label">Courriel :</label>
+                                    <div class="col-sm-8">
+                                      <input type="email" class="form-control" name="courriel" id="mot_de_passe" placeholder="JDoe06@gmail.com">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="mdp" class="col-sm-3 col-form-label">Mot de passe :</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" name="mot_de_passe" id="mot_de_passe" placeholder="Mot de passe" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="tel" class="col-sm-3 col-form-label"> Téléphone :</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" name="tel" id="tel" placeholder="(514) 123-4567" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nomComp" class="col-sm-3 col-form-label"> Nom compagnie :</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" name="nomComp" id="nomComp" placeholder="Compagnie" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="site_web" class="col-sm-3 col-form-label"> Site Web :</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" name="site_web" id="site_web" placeholder="www.macompagnie.com" />
+                                    </div>
+                                </div>                                
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="rue" class="col-sm-3 col-form-label"> Rue :</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" name="rue" id="rue" placeholder="1er avenue" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="bureau" class="col-sm-3 col-form-label"> Bureau :</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" name="bureau" id="bureau" placeholder="C" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ville" class="col-sm-3 col-form-label"> Ville :</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" name="ville" id="ville" placeholder="Montreal" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nomComp" class="col-sm-3 col-form-label"> Numéro civique :</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" name="numero_civique" id="numero_civique" placeholder="12345" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="code_postal" class="col-sm-3 col-form-label"> Code postal :</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" name="code_postal" id="code_postal" placeholder="A1A 1A1" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="province" class="col-sm-3 col-form-label"> Province :</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" name="province" id="province" placeholder="Province" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pays" class="col-sm-3 col-form-label"> Pays :</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" name="pays" id="pays" placeholder="Canada" />
+                                    </div>
+                                </div>
+                                <input type='hidden' name='role' value="employeur" />
+                                <input type="hidden" name="action" value="employeurInscription">            
+                                <br><input class="btn btn-primary" type="submit" value="S'inscrire"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
     </body>
 </html>

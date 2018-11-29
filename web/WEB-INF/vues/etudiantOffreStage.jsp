@@ -20,7 +20,6 @@
     </head>
     <body>
         <%@include file="./menu-etudiant.jsp" %>
-
         <!-- Contenu de la page -->
         <div class="container-fluid" id="contenuPage">
             <!-- Section de recherche par competences -->

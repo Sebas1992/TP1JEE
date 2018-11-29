@@ -9,6 +9,7 @@ import com.GestionStage.DAO.DaoEtudiant;
 import com.GestionStage.DAO.UtilisateurDAO;
 import com.GestionStage.Entites.Etudiant;
 import com.GestionStage.Entites.Utilisateur;
+import java.util.UUID;
 
 /**
  *
@@ -26,7 +27,7 @@ public class EtudiantInscriptionAction extends AbstractAction  implements Requir
         UtilisateurDAO udao = new UtilisateurDAO();
         
         //preparation objets
-        String id_etu = super.getRequest().getParameter("id_etu"),
+        String id_etu = UUID.randomUUID().toString(),
                 courriel = super.getRequest().getParameter("email"),
                 mdp = super.getRequest().getParameter("mdp"),
                 nom = super.getRequest().getParameter("nom"),
@@ -42,12 +43,11 @@ public class EtudiantInscriptionAction extends AbstractAction  implements Requir
         boolean req2=udao.create(etudiant);
         System.out.println(req1+""+req2);
         if(req1 && req2){
-            super.getRequest().setAttribute("message","Votre inscription est complète!");
+            return "profilEtudiant";
         }
         else{
             super.getRequest().setAttribute("message","Votre inscription n'a pas fonctionné!");
-        }
-                
+        }                
         return "etudiantInscription";
     }
     
