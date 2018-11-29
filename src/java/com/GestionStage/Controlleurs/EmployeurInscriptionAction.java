@@ -73,7 +73,7 @@ public class EmployeurInscriptionAction extends AbstractAction implements Requir
         {
             // Si tout s'est bien deroule, on envoie un message l'utilisateur
             request.setAttribute("message", "Compagnie bien cree");
-            return "employeurInscription";
+            return "profilEmployeur";
         }
         else
         {

@@ -10,8 +10,25 @@
 <html>
     <%@include file="./head.jsp" %>
     <body>
-        <%@include file="./menu.jsp" %>
-        <h1>Hello World!</h1>
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="menu">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" id="btnMenuColl" data-toggle="collapse" data-target="#navbar-collapse-main">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            <a class="navbar-brand" href="?action=default"><img id="logo" src="./static/images/logoCouper.png"/></a>
+        </div>
+        </nav>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <h2>${requestScope.message}</h2>
         <form class="form-horizontal" action="" method="get">
                 <div class="row">

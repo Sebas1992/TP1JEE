@@ -50,6 +50,9 @@ public class ActionBuilder {
             case("employeurInscription"):
                 action = new EmployeurInscriptionAction();
                 break;
+            case("profilEmployeur"):
+                action = new EmployeurProfilAction();
+                break;
             case("deconnection"):
                 action = new DeconnectionAction();
                 break;

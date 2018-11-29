@@ -37,7 +37,6 @@
                         </div>
                         <!--<input type="hidden" name="action" value="connection">-->
                         <button type="submit" class="btn btn-dark">Se connecter</button>
-                        <br/><br/> <a href="#" > Créez un compte </a>
                     </form>	
 		</div>	
             </div>
@@ -46,10 +45,6 @@
                     <h2>Inscriptions</h2>
                     <a href="?action=employeurInscription">Employeur</a> <br />
                     <a href="?action=etudiantInscription">Etudiant</a>
-                    <h2>Profil etudiant</h2>
-                    <a href="?action=etudiantProfil">Etudiant profil</a>
-                    <h2>Employeur vue</h2>
-                    <a href="?action=employeurContacterEtudiant">message Employeur à étudiant</a>
                 </div>
         </div>
     </body>

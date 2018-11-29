@@ -1,7 +1,7 @@
 <%-- 
     Document   : profilEtudiant
     Created on : 2018-11-23, 22:40:25
-    Author     : Utilisateur
+    Author     : sebas
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -19,7 +19,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <%@include file="./menu-etudiant.jsp" %>
+        <%@include file="./menu-employeur.jsp" %>
         <div class="container" id="profilEtu">
             <!--  *************************************Bare du haut *************************************-->
             <div class="row" id="contenuHaut">

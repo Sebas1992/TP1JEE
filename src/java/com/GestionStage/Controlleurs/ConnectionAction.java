@@ -28,9 +28,9 @@ public class ConnectionAction extends AbstractAction{
             case("etudiant"):
                 return "profilEtudiant";
             case("employeur"):
-                return "coordConsulterCand";
+                return "profilEmployeur";
             default:
-                return "coordConsulterCand";
+                return "connection";
             }
         }
         
@@ -61,9 +61,9 @@ public class ConnectionAction extends AbstractAction{
             case("etudiant"):
                 return "profilEtudiant";
             case("Employeur"):
-                return "coordConsulterCand";
+                return "profilEmployeur";
             default:
-                return "coordConsulterCand";
+                return "connection";
         }
     }    
 }
