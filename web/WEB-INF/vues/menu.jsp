@@ -19,7 +19,6 @@
             <div id="choixMenu">
                 <ul class="nav navbar-nav navbar-left">
                     <li><a class="#" href="">Mon profil</a></li>
-                    <li><a class="#" href="">Offres de stage</a></li>
                     <li><a class="#" href="?action=coordonnateurUploadFile">Documents</a></li>
                     <li><a class="#" href="?action=coordonnateurConsulterCom">Communications</a></li>
                     <li><a class="#" href="?action=coordonnateurConsulterCand">Candidatures</a></li>
