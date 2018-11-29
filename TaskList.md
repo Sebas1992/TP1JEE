@@ -14,7 +14,7 @@
 - [ ] EtudiantConsulterStageAction -- Vide
 - [ ] EtudiantModifierProfilAction -- À faire par nicolas
 - [ ] EtudiantPostulerAction -- En attente: À faire par nicolas
-- [ ] EtudiantPostulerAction -- En attente: peut être fusioner avec modifier profil
+- [ ] EtudiantProfilAction -- En attente: peut être fusioner avec modifier profil
 ## DAO
 
 - [x] devrait être terminé, ajouté au besoin des méthodes
