@@ -24,18 +24,18 @@ public class DaoEtudiant {
     
     public boolean create(Etudiant etu){
         Connection cnx = DbConnexion.getConnexion();
-        boolean res=false;
+        int rowsAffected = 0;
         try{
             PreparedStatement stm=cnx.prepareStatement("INSERT INTO etudiant VALUES (?,?) ");
             stm.setString(1,etu.getId_etudiant());
             stm.setString(2,etu.getStatus());          
-            res = stm.execute();
+            rowsAffected = stm.executeUpdate();
             stm.close();
         }catch(SQLException ex){
             Logger.getLogger(DaoEtudiant.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return res;    
-    }
+        return rowsAffected != 0;    
+    } 
     
     public boolean update(Etudiant etu){
         Connection cnx = DbConnexion.getConnexion();
