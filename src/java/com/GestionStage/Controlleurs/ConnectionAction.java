@@ -27,8 +27,10 @@ public class ConnectionAction extends AbstractAction{
             switch (utilisateur.getType_utilisateur()){
             case("etudiant"):
                 return "profilEtudiant";
-            case("employeur"):
+            case("Employeur"):
                 return "profilEmployeur";
+            case("coordonnateur"):
+                return "profilCoord";                
             default:
                 return "connection";
             }
@@ -44,6 +46,7 @@ public class ConnectionAction extends AbstractAction{
         UtilisateurDAO udao = new UtilisateurDAO();
         utilisateur=udao.findByCourriel(request.getParameter("email"));
         
+
         if (!identifiant.equals(utilisateur.getCourriel())){
             request.setAttribute("erreur", "Information non valide");
             System.out.println("trois condition!!!");
@@ -62,6 +65,8 @@ public class ConnectionAction extends AbstractAction{
                 return "profilEtudiant";
             case("Employeur"):
                 return "profilEmployeur";
+            case("coordonnateur"):
+                return "profilCoord";
             default:
                 return "connection";
         }
