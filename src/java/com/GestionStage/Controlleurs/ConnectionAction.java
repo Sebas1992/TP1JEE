@@ -28,7 +28,7 @@ public class ConnectionAction extends AbstractAction{
             case("etudiant"):
                 return "profilEtudiant";
             case("employeur"):
-                return "coordConsulterCand";
+                return "employeurRechercheEtudiant";
             default:
                 return "coordConsulterCand";
             }
@@ -60,8 +60,8 @@ public class ConnectionAction extends AbstractAction{
         switch (utilisateur.getType_utilisateur()){
             case("etudiant"):
                 return "profilEtudiant";
-            case("Employeur"):
-                return "coordConsulterCand";
+            case("employeur"):
+                return "employeurRechercheEtudiant";
             default:
                 return "coordConsulterCand";
         }

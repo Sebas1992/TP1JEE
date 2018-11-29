@@ -13,6 +13,16 @@ public class EtudiantProfilAction extends AbstractAction  implements RequirePRG{
 
     @Override
     public String execute() {
+        
+        // Si le profil a ete modifier
+        if("oui".equals(request.getParameter("modifier"))){
+            
+            //Preparation des objets
+            
+            request.setAttribute("message","Votre profil a ete modifier");
+            return "profilEtudiant";            
+        }
+ 
         return "profilEtudiant";
     }
     

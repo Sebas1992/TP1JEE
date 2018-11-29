@@ -25,7 +25,7 @@
             <!--  *************************************Bare du haut *************************************-->
             <div class="row" id="contenuHaut">
                 <div class="col-lg-6">
-                    <h2>Profil rempli à <span id="completionProfil">0%</span></h2>
+                    <h2>Profil</h2>
                 </div>
                 <div class="col-lg-6">
                     <a href="#" class="btn btn-danger btn-md" id="info">
@@ -166,6 +166,7 @@
                                 </div>
                             </div>
                             <input type="hidden" name="action" value="etudiantModifierProfil">
+                            <input type="hidden" name="modifier" value="oui">
                             <div class="col-lg-4">
                                 <input type="submit" class="btn btn-primary" value="Enregistrer les modifications">
                             </div>
