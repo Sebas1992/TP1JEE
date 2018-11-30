@@ -4,8 +4,8 @@
 - [x] Formulaire d'inscription employeur/etudiant
 - [ ] Étudiant : Documents et Communications
 - [ ] Étudiant : Voir avec l'équipe si on crée une vue agrandi offre de stage
-- [ ] Employeur : Rechercher étudiant :: devrait ressembler a rechercher offre de stage
-- [ ] Employeur : Publier offre de stage -- mettre un lien dans cette page pour visualiser/supprimer
+- [x] Employeur : Rechercher étudiant :: devrait ressembler a rechercher offre de stage
+- [x] Employeur : Publier offre de stage -- mettre un lien dans cette page pour visualiser/supprimer
 
 ## Controlleurs
 - [ ] DefaultAction -- On le garde pour la période de test
