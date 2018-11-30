@@ -4,6 +4,7 @@
     Author     : anonyme
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -61,34 +62,19 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <td>Compagnie <a href="#" class="fa fa-arrows-alt-v"></a></td>
-                                    <td>Spécialité <a href="#" class="fa fa-arrows-alt-v"></a></td>
-                                    <td>Poste <a href="#" class="fa fa-arrows-alt-v"></a></td>
-                                    <td>Places <a href="#" class="fa fa-arrows-alt-v"></a></td>
-                                    <td>Rémunération <a href="#" class="fa fa-arrows-alt-v"></a></td>
-                                    <td>Match <a href="#" class="fa fa-arrows-alt-v"></a></td>
-                                    <td>Statut <a href="#" class="fa fa-arrows-alt-v"></a></td>
+                                    <td>Nom</td>
+                                    <td>Prenom</td>
+                                    <td>Courriel</td>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td><a href="pomme.com">pomme</a></td>
-                                    <td>Programmation</td>
-                                    <td>Programmeur Web</td>
-                                    <td>1</td>
-                                    <td>0$/hr</td>
-                                    <td>87%</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="internet.com">Le meilleur internet</a></td>
-                                    <td>Reseau</td>
-                                    <td>Programmeur Reseau</td>
-                                    <td>1</td>
-                                    <td>-1$/hr</td>
-                                    <td>1%</td>
-                                    <td>1</td>
-                                </tr>
+                                <c:forEach items="${requestScope.listeEtudiants}" var="etu">
+                                    <tr>    
+                                        <td><c:out value="${etu.nom}" /></td>
+                                        <td><c:out value="${etu.prenom}" /></td>
+                                        <td><c:out value="${etu.courriel}" /></td>
+                                    </tr>
+                                </c:forEach>
                             </tbody>
                         </table>
                     </div>

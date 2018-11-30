@@ -5,6 +5,7 @@
  */
 package com.GestionStage.DAO;
 
+import com.GestionStage.Entites.Etudiant;
 import com.GestionStage.Entites.Utilisateur;
 import com.GestionStage.Singleton.DbConnexion;
 import java.sql.Connection;
@@ -157,5 +158,29 @@ public class UtilisateurDAO implements Dao<Utilisateur>{
             Logger.getLogger(UtilisateurDAO.class.getName()).log(Level.SEVERE, null, e);
         }
         return utilisateur;
+    }
+    
+    public List findEtudiants() {
+        List<Utilisateur> liste = new LinkedList<>();
+        String query = "Select * FROM utilisateur WHERE type_utilisateur='etudiant'";
+        try{
+            Connection cnx = DbConnexion.getConnexion();
+            PreparedStatement stm = cnx.prepareStatement(query);
+            ResultSet rs = stm.executeQuery();
+            while(rs.next())
+            {
+                Utilisateur utilisateur = new Utilisateur();
+                utilisateur.setCourriel(rs.getString("courriel"));
+                utilisateur.setId_utilisateur(rs.getString("id_utilisateur"));
+                utilisateur.setMot_de_passe(rs.getString("mot_de_passe"));
+                utilisateur.setNom(rs.getString("nom"));
+                utilisateur.setPrenom(rs.getString("prenom"));                                
+                liste.add(utilisateur);
+            }
+        }catch(SQLException e){
+            Logger.getLogger(UtilisateurDAO.class.getName()).log(Level.SEVERE, null, e);
+        }
+        DbConnexion.close();
+        return liste;
     }
 }

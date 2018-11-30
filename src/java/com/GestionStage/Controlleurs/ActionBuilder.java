@@ -44,6 +44,9 @@ public class ActionBuilder {
             case("coordonnateurUploadFile"):
                 action = new CoordonnateurUploadFileAction();
                 break;
+            case("employeurRechercherEtudiant"):
+                action = new EmployeurRechercherCandidatsAction();
+                break;
             case("employeurContacterEtudiant"):
                 action = new EmployeurContacterEtudiantAction();
                 break;

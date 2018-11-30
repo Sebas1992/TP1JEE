@@ -20,7 +20,7 @@
                 <ul class="nav navbar-nav navbar-left">
                     <li><a class="#" href="?action=profilEmployeur">Mon profil</a></li>
                     <li><a class="#" href="?action=profilEmployeur">Publier une offre de stage</a></li>
-                    <li><a class="#" href="?action=profilEmployeur">Rechercher Candidat</a></li>
+                    <li><a class="#" href="?action=employeurRechercherEtudiant">Rechercher Candidat</a></li>
                     <li><a class="#" href="?action=deconnection">Se déconnecter</a></li>
                 </ul>
             </div>
