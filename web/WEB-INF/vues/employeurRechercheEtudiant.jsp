@@ -65,6 +65,7 @@
                                     <td>Nom</td>
                                     <td>Prenom</td>
                                     <td>Courriel</td>
+                                    <td>Communiquer</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -72,7 +73,7 @@
                                     <tr>    
                                         <td><c:out value="${etu.nom}" /></td>
                                         <td><c:out value="${etu.prenom}" /></td>
-                                        <td><c:out value="${etu.courriel}" /></td>
+                                        <td><c:out value="${etu.courriel}" /></td>                                        
                                     </tr>
                                 </c:forEach>
                             </tbody>

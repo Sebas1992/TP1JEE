@@ -50,6 +50,9 @@ public class ActionBuilder {
             case("employeurContacterEtudiant"):
                 action = new EmployeurContacterEtudiantAction();
                 break;
+            case("employeurPublierOffreStage"):
+                action = new EmployeurPublierOffreStage();
+                break;
             case("employeurInscription"):
                 action = new EmployeurInscriptionAction();
                 break;

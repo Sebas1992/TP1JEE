@@ -13,6 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -23,8 +24,8 @@ import java.util.logging.Logger;
 public class OffreStageDao {
     public boolean create(OffreStage o) {
         int rowsAffected = 0;
-        String query = "INSERT INTO offreStage (id_offre, titre, description, lien_web, lien_document, date, nb_vues, active, id_employeur)"
-                + "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO offrestage (id_offre, titre, description, lien_web, lien_document, nb_vues, active, id_employeur)"
+                + "VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
         try{
             Connection cnx = DbConnexion.getConnexion();
             PreparedStatement stm = cnx.prepareStatement(query);
@@ -33,10 +34,9 @@ public class OffreStageDao {
             stm.setString(3, o.getDescription());
             stm.setString(4, o.getLienWeb());
             stm.setString(5, o.getLienDocument());
-            stm.setTimestamp(6, o.getDate());
-            stm.setInt(7,o.getNbVues());
-            stm.setInt(8,o.getActive());
-            stm.setString(9,o.getIdEmployeur());
+            stm.setInt(6,o.getNbVues());
+            stm.setInt(7,o.getActive());
+            stm.setString(8,o.getIdEmployeur());
             rowsAffected = stm.executeUpdate();
         }catch(SQLException e){
              Logger.getLogger(UtilisateurDAO.class.getName()).log(Level.SEVERE, null, e);
