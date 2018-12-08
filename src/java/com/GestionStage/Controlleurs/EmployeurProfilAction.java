@@ -13,7 +13,7 @@ public class EmployeurProfilAction extends AbstractAction{
 
     @Override
     public String execute() {
-        return "profilEmployeur";
+        return "employeurPublierOffreStage";
     }
     
 }

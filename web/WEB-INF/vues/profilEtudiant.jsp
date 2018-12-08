@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -50,12 +51,6 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="tel" class="col-sm-3 col-form-label">Téléphone :</label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="tel" name="tel" placeholder="(514)-389-7630">
-                                </div>
-                            </div>
-                            <div class="form-group">
                                 <label for="email" class="col-sm-3 col-form-label">Courriel :</label>
                                 <div class="col-sm-8">
                                     <input type="email" class="form-control" id="email" name="email" placeholder="JDoe06@gmail.com">
@@ -75,29 +70,6 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="relNote" class="col-sm-3 col-form-label">Relevé de notes :</label>
-                                <div class="col-sm-8 input-group">
-                                    <label class="input-group-btn">
-                                        <span class="btn btn-primary">
-                                            Ajouter<input type="file" lass="form-control-file" accept="application/pdf" style="display: none;" id="relNote" multiple>
-                                        </span>
-                                    </label>
-                                    <input type="text" class="form-control" readonly id="relNoteNom">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="lK" class="col-sm-3 col-form-label">LinkedIn :</label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="lk" name="lk">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="git" class="col-sm-3 col-form-label">Github :</label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="git" name="git" >
-                                </div>
-                            </div>
                         </div>
                     </div>
                     
@@ -107,36 +79,21 @@
                                 <thead>
                                     <tr>
                                         <td>Compétences <a href="#" class="fa fa-arrows-alt-v"></a></td>
-                                        <td>Domaine <a href="#" class="fa fa-arrows-alt-v"></a></td>
                                         <td>Niveau <a href="#" class="fa fa-arrows-alt-v"></a></td>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <!--  +++++++++++a remplir automatiquement +++++++++++++++++++-->
-                                        <td>Java EE</td>
-                                        <td>BackEnd</td>
-                                        <td>
-                                            <select class="form-control">
-                                                <option>Aucun</option>
-                                                <option>Débutant</option>
-                                                <option>Intermédiare</option>
-                                                <option>Expert</option>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>CSS</td>
-                                        <td>FrontEnd</td>
-                                        <td>
-                                            <select class="form-control">
-                                                <option>Aucun</option>
-                                                <option>Débutant</option>
-                                                <option>Intermédiare</option>
-                                                <option>Expert</option>
-                                            </select>
-                                        </td>
-                                    </tr>
+                                    <c:forEach items="${criteres}" var="crit">
+                                        <tr>
+                                            <td><c:out value="${crit.nom}" /></td>
+                                            <td>
+                                                <select class="form-control">
+                                                    <option>non</option>
+                                                    <option>oui</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                    </c:forEach>
                                 </tbody>
                             </table>
                         </div>
@@ -153,17 +110,6 @@
                             </div>
                         </div>
                         <div class="row" id="rowGaucheBas">
-                            <div class="col-lg-7" id="spec">
-                                <div class="form-group inline">
-                                    <label for="spec" class="col-sm-4 col-form-label">Domaine :</label>
-                                    <div class="col-sm-8">
-                                        <select class="form-control" id="domaine" name="domaine">
-                                            <option>Réseaux</option>
-                                            <option>Programmation</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
                             <input type="hidden" name="action" value="etudiantModifierProfil">
                             <input type="hidden" name="modifier" value="oui">
                             <div class="col-lg-4">
@@ -173,40 +119,6 @@
                     </div>    
                 </div>
             </form>
-            
-            <!--  ************************************* historique: a enlever pt *************************************-->
-            <div class="row">
-                <table id="stage" class="table table-hover">
-                    <thead>
-                        <tr>
-                            <td>Compagnie <a href="#" class="fa fa-arrows-alt-v"></a></td>
-                            <td>Poste <a href="#" class="fa fa-arrows-alt-v"></a></td>
-                            <td>Date de contact <a href="#" class="fa fa-arrows-alt-v"></a></td>
-                            <td>Statut <a href="#" class="fa fa-arrows-alt-v"></a></td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><a href="DealerB">Dealer Breacher</a></td>
-                            <td>Programmeur Web</td>
-                            <td>12/10/2018</td>
-                            <td>En attente</td>
-                        </tr>
-                        <tr>
-                            <td><a href="Google">Google</a></td>
-                            <td>Soutien Technique</td>
-                            <td>12/10/2018</td>
-                            <td>Reçu</td>
-                        </tr>
-                        <tr>
-                            <td><a href="HydroQc">Hydro Québec</a></td>
-                            <td>Programmation</td>
-                            <td>12/10/2018</td>
-                            <td>Reçu</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
         </div>
         <footer id="footer" class="container-fluid text-center">
             <p>&copy; Copyright 2018, Stagéo.</p>

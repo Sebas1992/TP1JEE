@@ -12,7 +12,7 @@
                 <div class="collapse navbar-collapse" id="navbar-collapse-main">
                     <div id="choixMenu">
                         <ul class="nav navbar-nav navbar-left">
-                            <li><a class="#" href="">Mon profil</a></li>
+                            <li><a class="#" href="?action=profilEtudiant">Mon profil</a></li>
                             <li><a class="#" href="?action=etudiantConsulterStage">Offres de stage</a></li>
                             <li><a class="#" href="">Documents</a></li>
                             <li><a class="#" href="">Communication</a></li>

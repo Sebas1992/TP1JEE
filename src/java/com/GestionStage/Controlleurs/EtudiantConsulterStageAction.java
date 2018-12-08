@@ -5,6 +5,8 @@
  */
 package com.GestionStage.Controlleurs;
 
+import com.GestionStage.DAO.OffreStageDao;
+
 /**
  *
  * @author Utilisateur
@@ -13,6 +15,8 @@ public class EtudiantConsulterStageAction extends AbstractAction {
 
     @Override
     public String execute() {
+        OffreStageDao of = new OffreStageDao();
+        request.setAttribute("offreStages", of.findAll());
         return "etudiantOffreStage";
     }
 }

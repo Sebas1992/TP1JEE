@@ -23,7 +23,7 @@ public class ActionBuilder {
             case("etudiantConsulterStage"):
                 action = new EtudiantConsulterStageAction();
                 break;
-            case("etudiantProfil"):
+            case("profilEtudiant"):
                 action = new EtudiantProfilAction();
                 break;
             case("etudiantModifierProfil"):

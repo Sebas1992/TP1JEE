@@ -18,26 +18,22 @@ public class ConnectionAction extends AbstractAction{
     @Override
     public String execute() {
         HttpSession session = request.getSession(true);
-        System.out.println("Email :"+request.getParameter("email"));
-        System.out.println("MDP :"+request.getParameter("password"));
         
         if (session.getAttribute("connected")!=null){
-            System.out.println("deuxieme condition!!!");
             Utilisateur utilisateur = (Utilisateur)session.getAttribute("connected");
             switch (utilisateur.getType_utilisateur()){
             case("etudiant"):
                 return "profilEtudiant";
-            case("employeur"):
-                return "profilEmployeur";
+            case("Employeur"):
+                return "employeurPublierOffreStage";
             case("coordonnateur"):
-                return "profilCoord";                
+                return "coordDocuments";               
             default:
                 return "connection";
             }
         }
         
         if (request.getParameter("email")==null || "".equals(request.getParameter("email"))){
-            System.out.println("premiere condition!!!");
             return "connection";
         }
         
@@ -49,12 +45,10 @@ public class ConnectionAction extends AbstractAction{
 
         if (!identifiant.equals(utilisateur.getCourriel())){
             request.setAttribute("erreur", "Information non valide");
-            System.out.println("trois condition!!!");
             return "connection";
         }
         if (!mdp.equals(utilisateur.getMot_de_passe())){
             request.setAttribute("erreur", "Information non valide");
-            System.out.println("quatre condition!!!");
             return "connection";
         }
         utilisateur.setMot_de_passe("");
@@ -64,10 +58,10 @@ public class ConnectionAction extends AbstractAction{
             case("etudiant"):
                 return "profilEtudiant";
 
-            case("employeur"):
-                return "profilEmployeur";
+            case("Employeur"):
+                return "employeurPublierOffreStage";
             case("coordonnateur"):
-                return "profilCoord";
+                return "coordDocuments";
             default:
                 return "connection";
         }

@@ -13,6 +13,9 @@ public class Critere {
     
     private String id_critere;
     private String nom;
+    
+    public Critere(){
+    }
 
     public String getIdCritere() {
         return id_critere;

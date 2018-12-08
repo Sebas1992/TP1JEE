@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -59,34 +60,19 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <td>Compagnie <a href="#" class="fa fa-arrows-alt-v"></a></td>
-                                    <td>Spécialité <a href="#" class="fa fa-arrows-alt-v"></a></td>
-                                    <td>Poste <a href="#" class="fa fa-arrows-alt-v"></a></td>
-                                    <td>Places <a href="#" class="fa fa-arrows-alt-v"></a></td>
-                                    <td>Rémunération <a href="#" class="fa fa-arrows-alt-v"></a></td>
-                                    <td>Match <a href="#" class="fa fa-arrows-alt-v"></a></td>
-                                    <td>Statut <a href="#" class="fa fa-arrows-alt-v"></a></td>
+                                    <td>Titre <a href="#" class="fa fa-arrows-alt-v"></a></td>
+                                    <td>Active <a href="#" class="fa fa-arrows-alt-v"></a></td>
+                                    <td>Date <a href="#" class="fa fa-arrows-alt-v"></a></td>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td><a href="pomme.com">pomme</a></td>
-                                    <td>Programmation</td>
-                                    <td>Programmeur Web</td>
-                                    <td>1</td>
-                                    <td>0$/hr</td>
-                                    <td>87%</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="internet.com">Le meilleur internet</a></td>
-                                    <td>Reseau</td>
-                                    <td>Programmeur Reseau</td>
-                                    <td>1</td>
-                                    <td>-1$/hr</td>
-                                    <td>1%</td>
-                                    <td>1</td>
-                                </tr>
+                                <c:forEach items="${requestScope.offreStages}" var="offre">
+                                    <tr>    
+                                        <td><c:out value="${offre.titre}" /></td>
+                                        <td><c:out value="${offre.active}" /></td>
+                                        <td><c:out value="${offre.date}" /></td>                                        
+                                    </tr>
+                                </c:forEach>
                             </tbody>
                         </table>
                     </div>

@@ -92,6 +92,24 @@ public class UtilisateurDAO implements Dao<Utilisateur>{
         DbConnexion.close();
         return rowsAffected != 0;
     }
+    
+    public boolean updateP(Utilisateur x) {
+        int rowsAffected = 0;
+        String query = "UPDATE utilisateur SET courriel=?,"
+                + "nom=?, prenom=?  where id_utilisateur=?";
+        try{
+            Connection cnx = DbConnexion.getConnexion();
+            PreparedStatement stm = cnx.prepareStatement(query);            
+            stm.setString(1, x.getCourriel());
+            stm.setString(2, x.getNom());
+            stm.setString(3, x.getPrenom());
+            rowsAffected = stm.executeUpdate();
+        }catch(SQLException e){
+            Logger.getLogger(UtilisateurDAO.class.getName()).log(Level.SEVERE, null, e);
+        }
+        DbConnexion.close();
+        return rowsAffected != 0;
+    }
 
     @Override
     public boolean delete(Utilisateur x) {
